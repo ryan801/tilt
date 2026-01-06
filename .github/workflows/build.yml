@@ -1,0 +1,159 @@
+# Copyright (c) 2018-2024, The Nerva Project
+# Copyright (c) 2014-2024, The Monero Project
+#
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this list of
+#    conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright notice, this list
+#    of conditions and the following disclaimer in the documentation and/or other
+#    materials provided with the distribution.
+#
+# 3. Neither the name of the copyright holder nor the names of its contributors may be
+#    used to endorse or promote products derived from this software without specific
+#    prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+# THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+# THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+name: ci/gh-actions/build
+
+on:
+    push:
+        paths-ignore:
+            - 'docs/**'
+            - '**/README.md'
+    pull_request:
+        paths-ignore:
+            - 'docs/**'
+            - '**/README.md'
+    workflow_dispatch:
+
+env:
+    REMOVE_BUNDLED_PACKAGES: sudo rm -rf /usr/local
+    SET_APT_CONF: |
+        echo "Acquire::Retries \"3\";"         | sudo tee -a /etc/apt/apt.conf.d/80-custom
+        echo "Acquire::http::Timeout \"120\";" | sudo tee -a /etc/apt/apt.conf.d/80-custom
+        echo "Acquire::ftp::Timeout \"120\";"  | sudo tee -a /etc/apt/apt.conf.d/80-custom
+    CCACHE_SETTINGS: |
+        ccache --max-size=150M
+        ccache --set-config=compression=true
+
+jobs:
+    build-ubuntu:
+        runs-on: ubuntu-latest
+        env:
+            CCACHE_TEMPDIR: /tmp/.ccache-temp
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    submodules: recursive
+            -   uses: actions/cache@v4
+                with:
+                    path: ~/.ccache
+                    key: ccache-${{ runner.os }}-build-${{ matrix.os }}-${{ github.sha }}
+                    restore-keys: ccache-${{ runner.os }}-build-${{ matrix.os }}
+            -   name: Remove bundled packages
+                run: ${{env.REMOVE_BUNDLED_PACKAGES}}
+            -   name: Set APT configuration
+                run: ${{env.SET_APT_CONF}}
+            -   name: Update APT
+                run: sudo apt update
+            -   name: Install dependencies
+                run: sudo apt install -y build-essential cmake ccache pkg-config libboost-all-dev libssl-dev libzmq3-dev libpgm-dev libunbound-dev libsodium-dev git
+            -   name: Build
+                run: |
+                    ${{env.CCACHE_SETTINGS}}
+                    make -j3
+
+    build-windows:
+        runs-on: windows-latest
+        env:
+            CCACHE_TEMPDIR: C:\Users\runneradmin\.ccache-temp
+        defaults:
+            run:
+                shell: msys2 {0}
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    submodules: recursive
+            -   uses: actions/cache@v4
+                with:
+                    path: C:\Users\runneradmin\.ccache
+                    key: ccache-${{ runner.os }}-build-${{ github.sha }}
+                    restore-keys: ccache-${{ runner.os }}-build-
+            -   name: Install dependencies
+                uses: msys2/setup-msys2@v2
+                with:
+                    update: true
+                    install: mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-ccache mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-unbound git
+            -   shell: msys2 {0}
+                run: |
+                    curl -O https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-boost-1.86.0-7-any.pkg.tar.zst
+                    curl -O https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-boost-1.86.0-7-any.pkg.tar.zst.sig
+                    gpg --homedir /etc/pacman.d/gnupg --verify mingw-w64-x86_64-boost-1.86.0-7-any.pkg.tar.zst.sig
+                    pacman --noconfirm -U mingw-w64-x86_64-boost-1.86.0-7-any.pkg.tar.zst
+            -   name: Build
+                run: |
+                    ${{env.CCACHE_SETTINGS}}
+                    make release-static-win64 -j2
+
+    build-macos:
+        runs-on: macos-latest
+        env:
+            CCACHE_TEMPDIR: /tmp/.ccache-temp
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    submodules: recursive
+            -   uses: actions/cache@v4
+                with:
+                    path: /Users/runner/Library/Caches/ccache
+                    key: ccache-${{ runner.os }}-build-${{ github.sha }}
+                    restore-keys: ccache-${{ runner.os }}-build-
+            -   name: Install dependencies
+                run: |
+                    HOMEBREW_NO_AUTO_UPDATE=1 brew install boost@1.85 hidapi zmq libpgm miniupnpc ldns expat libunwind-headers protobuf@21 ccache
+                    brew link protobuf@21 boost@1.85
+            -   name: Build
+                run: |
+                    ${{env.CCACHE_SETTINGS}}
+                    make -j3
+
+    libwallet-ubuntu:
+        runs-on: ubuntu-latest
+        env:
+            CCACHE_TEMPDIR: /tmp/.ccache-temp
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    submodules: recursive
+            -   uses: actions/cache@v4
+                with:
+                    path: ~/.ccache
+                    key: ccache-${{ runner.os }}-libwallet-${{ matrix.os }}-${{ github.sha }}
+                    restore-keys: ccache-${{ runner.os }}-libwallet-${{ matrix.os }}
+            -   name: Remove bundled packages
+                run: ${{env.REMOVE_BUNDLED_PACKAGES}}
+            -   name: Set APT configuration
+                run: ${{env.SET_APT_CONF}}
+            -   name: Update APT
+                run: sudo apt update
+            -   name: Install dependencies
+                run: sudo apt install -y build-essential cmake ccache pkg-config libboost-all-dev libssl-dev libzmq3-dev libpgm-dev libunbound-dev libsodium-dev git
+            -   name: Build
+                run: |
+                    ${{env.CCACHE_SETTINGS}}
+                    cmake .
+                    make wallet_api -j3

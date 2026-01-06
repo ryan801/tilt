@@ -1,0 +1,129 @@
+# Copyright (c) 2018-2024, The Nerva Project
+# Copyright (c) 2014-2024, The Monero Project
+#
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this list of
+#    conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright notice, this list
+#    of conditions and the following disclaimer in the documentation and/or other
+#    materials provided with the distribution.
+#
+# 3. Neither the name of the copyright holder nor the names of its contributors may be
+#    used to endorse or promote products derived from this software without specific
+#    prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+# THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+# THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+name: ci/gh-actions/depends
+
+on:
+    push:
+        paths-ignore:
+            - 'docs/**'
+            - '**/README.md'
+    pull_request:
+        paths-ignore:
+            - 'docs/**'
+            - '**/README.md'
+    workflow_dispatch:
+
+env:
+    APT_SET_CONF: |
+        echo "Acquire::Retries \"3\";"         | sudo tee -a /etc/apt/apt.conf.d/80-custom
+        echo "Acquire::http::Timeout \"120\";" | sudo tee -a /etc/apt/apt.conf.d/80-custom
+        echo "Acquire::ftp::Timeout \"120\";"  | sudo tee -a /etc/apt/apt.conf.d/80-custom
+    CCACHE_SETTINGS: |
+        ccache --max-size=150M
+        ccache --set-config=compression=true
+
+jobs:
+    build-cross:
+        runs-on: ubuntu-20.04
+        env:
+            CCACHE_TEMPDIR: /tmp/.ccache-temp
+        strategy:
+            fail-fast: false
+            matrix:
+                toolchain:
+                    -   name: "ARM v7"
+                        host: "arm-linux-gnueabihf"
+                        packages: "python3 gperf g++-arm-linux-gnueabihf"
+                    -   name: "ARM v8"
+                        host: "aarch64-linux-gnu"
+                        packages: "python3 gperf g++-aarch64-linux-gnu"
+                    -   name: "i686 Win"
+                        host: "i686-w64-mingw32"
+                        packages: "python3 g++-mingw-w64-i686"
+                    -   name: "i686 Linux"
+                        host: "i686-pc-linux-gnu"
+                        packages: "gperf cmake g++-multilib python3-zmq"
+                    -   name: "Win64"
+                        host: "x86_64-w64-mingw32"
+                        packages: "cmake python3 g++-mingw-w64-x86-64"
+                    -   name: "x86_64 Linux"
+                        host: "x86_64-unknown-linux-gnu"
+                        packages: "gperf cmake python3-zmq libdbus-1-dev libharfbuzz-dev"
+                    -   name: "Cross-Mac x86_64"
+                        host: "x86_64-apple-darwin"
+                        packages: "cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python-dev python3-setuptools-git"
+                    -   name: "Cross-Mac aarch64"
+                        host: "aarch64-apple-darwin"
+                        packages: "cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python-dev python3-setuptools-git"
+                    -   name: "x86_64 Freebsd"
+                        host: "x86_64-unknown-freebsd"
+                        packages: "clang-8 gperf cmake python3-zmq libdbus-1-dev libharfbuzz-dev"
+                    -   name: "ARMv8 Android"
+                        host: "aarch64-linux-android"
+                        packages: "gperf cmake python3"
+        name: ${{ matrix.toolchain.name }}
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+                    submodules: recursive
+            -   name: Ccache
+                uses: actions/cache@v4
+                with:
+                    path: ~/.ccache
+                    key: ccache-${{ matrix.toolchain.host }}-${{ github.sha }}
+                    restore-keys: ccache-${{ matrix.toolchain.host }}-
+            -   name: Depends cache
+                uses: actions/cache@v4
+                with:
+                    path: contrib/depends/built
+                    key: depends-${{ matrix.toolchain.host }}-${{ hashFiles('contrib/depends/packages/*') }}
+                    restore-keys: |
+                        depends-${{ matrix.toolchain.host }}-${{ hashFiles('contrib/depends/packages/*') }}
+                        depends-${{ matrix.toolchain.host }}-
+            -   name: Set apt conf
+                run: ${{env.APT_SET_CONF}}
+            -   name: Install dependencies
+                run: sudo apt update; sudo apt -y install build-essential libtool cmake autotools-dev automake pkg-config bsdmainutils curl git ca-certificates ccache ${{ matrix.toolchain.packages }}
+            -   name: Prepare w64-mingw32
+                if: ${{ matrix.toolchain.host == 'x86_64-w64-mingw32' || matrix.toolchain.host == 'i686-w64-mingw32' }}
+                run: |
+                    sudo update-alternatives --set ${{ matrix.toolchain.host }}-g++ $(which ${{ matrix.toolchain.host }}-g++-posix)
+                    sudo update-alternatives --set ${{ matrix.toolchain.host }}-gcc $(which ${{ matrix.toolchain.host }}-gcc-posix)
+            -   name: Build
+                run: |
+                    ${{env.CCACHE_SETTINGS}}
+                    make depends target=${{ matrix.toolchain.host }} -j2
+            -   uses: actions/upload-artifact@v4
+                # if: ${{ matrix.toolchain.host == 'x86_64-w64-mingw32' || matrix.toolchain.host == 'x86_64-apple-darwin' || matrix.toolchain.host == 'aarch64-apple-darwin' || matrix.toolchain.host == 'x86_64-unknown-linux-gnu' }}
+                with:
+                    name: ${{ matrix.toolchain.name }}
+                    path: |
+                        /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/build/${{ matrix.toolchain.host }}/release/bin/nerva*

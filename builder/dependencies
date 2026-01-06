@@ -1,0 +1,39 @@
+#!/bin/bash
+
+BUILDER_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NERVA_DIR=$(dirname $BUILDER_DIR)
+source ${BUILDER_DIR}/environment
+
+detectversion
+detectos
+
+if [ ${NERVA_BUILD_OS} == "linux" ]; then
+
+	if [ $NERVA_BUILD_DISTRO == "ubuntu" ] || [ $NERVA_BUILD_DISTRO == "debian" ]; then
+		sudo apt install -y \
+		ca-certificates nano zip unzip tar xz-utils cmake g++ make pkg-config libtool-bin autoconf \
+		automake build-essential cmake pkg-config pcsc-tools pcscd libpcsclite1 python-dev virtualenv \
+		libudev-dev libhidapi-dev libzmq3-dev libunbound-dev libboost-all-dev libusb-1.0-0-dev libusb-dev \
+		libssl-dev libsodium-dev libcurl4-openssl-dev libminiupnpc-dev libunwind8-dev liblzma-dev \
+		libreadline6-dev libldns-dev libexpat1-dev libgtest-dev doxygen graphviz libhidapi-libusb0
+	else
+		echo "This distro is not officially supported"	
+		exit 1
+	fi
+
+elif [ ${NERVA_BUILD_OS} == "osx" ]; then
+
+	xcode-select --install
+
+	if ! [ -x "$(command -v brew)" ]; then
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	fi
+
+	brew update
+	brew upgrade
+	brew bundle --file=${NERVA_DIR}/contrib/brew/Brewfile
+
+elif [ ${NERVA_BUILD_OS} == "windows" ]; then
+	pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-boost mingw-w64-x86_64-cmake mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi
+fi
+

@@ -2919,3 +2919,406 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:240 (try_compile)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project"
+      binary: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build"
+    buildResult:
+      variable: "SUCCESS"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/cmake -S/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project -B/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/depend
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Scanning dependencies of target l0
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/build
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 14%] Building CXX object CMakeFiles/l0.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl0_EXPORTS  -fPIC -o CMakeFiles/l0.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 28%] Linking CXX shared library libl0.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l0.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared -Wl,-soname,libl0.so -o libl0.so CMakeFiles/l0.dir/incorrect_source.cpp.o 
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 28%] Built target l0
+        /usr/bin/gmake  -f CMakeFiles/l1.dir/build.make CMakeFiles/l1.dir/depend
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/depend.internal".
+        Scanning dependencies of target l1
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l1.dir/build.make CMakeFiles/l1.dir/build
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 42%] Building CXX object CMakeFiles/l1.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl1_EXPORTS  -fPIC -o CMakeFiles/l1.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 57%] Linking CXX shared module libl1.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l1.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared  -o libl1.so CMakeFiles/l1.dir/incorrect_source.cpp.o 
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 57%] Built target l1
+        /usr/bin/gmake  -f CMakeFiles/l2.dir/build.make CMakeFiles/l2.dir/depend
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/depend.internal".
+        Scanning dependencies of target l2
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l2.dir/build.make CMakeFiles/l2.dir/build
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 71%] Building CXX object CMakeFiles/l2.dir/incorrect_source.cpp.o
+        /usr/bin/c++    -o CMakeFiles/l2.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 85%] Linking CXX static library libl2.a
+        /usr/bin/cmake -P CMakeFiles/l2.dir/cmake_clean_target.cmake
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l2.dir/link.txt --verbose=1
+        /usr/bin/ar qc libl2.a CMakeFiles/l2.dir/incorrect_source.cpp.o
+        /usr/bin/ranlib libl2.a
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 85%] Built target l2
+        /usr/bin/gmake  -f CMakeFiles/l3.dir/build.make CMakeFiles/l3.dir/depend
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/depend.internal".
+        Scanning dependencies of target l3
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l3.dir/build.make CMakeFiles/l3.dir/build
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [100%] Building CXX object CMakeFiles/l3.dir/incorrect_source.cpp.o
+        /usr/bin/c++    -o CMakeFiles/l3.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [100%] Built target l3
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles 0
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:240 (try_compile)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project"
+      binary: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build"
+    buildResult:
+      variable: "SUCCESS"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/cmake -S/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project -B/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/depend
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Scanning dependencies of target l0
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/build
+        gmake[3]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 14%] Building CXX object CMakeFiles/l0.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl0_EXPORTS  -fPIC -o CMakeFiles/l0.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 28%] Linking CXX shared library libl0.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l0.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared -Wl,-soname,libl0.so -o libl0.so CMakeFiles/l0.dir/incorrect_source.cpp.o 
+        /usr/bin/ld: CMakeFiles/l0.dir/incorrect_source.cpp.o: in function `symbol()':
+        incorrect_source.cpp:(.text+0x5): undefined reference to `undefined_symbol()'
+        collect2: error: ld returned 1 exit status
+        gmake[3]: *** [CMakeFiles/l0.dir/build.make:96: libl0.so] Error 1
+        gmake[3]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        gmake[2]: *** [CMakeFiles/Makefile2:89: CMakeFiles/l0.dir/all] Error 2
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        gmake[1]: *** [Makefile:91: all] Error 2
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:804 (try_compile)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "STATIC_ASSERT_RES"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c816e/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c816e.dir/build.make CMakeFiles/cmTC_c816e.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_c816e.dir/test-static-assert.c.o
+        /usr/bin/cc   -pthread -maes -march=native  -std=gnu11 -o CMakeFiles/cmTC_c816e.dir/test-static-assert.c.o -c /home/shawr/develop/crypto/tilt/cmake/test-static-assert.c
+        Linking C executable cmTC_c816e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c816e.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native  "CMakeFiles/cmTC_c816e.dir/test-static-assert.c.o" -o cmTC_c816e 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:811 (try_compile)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "STATIC_ASSERT_CPP_RES"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1bec4/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1bec4.dir/build.make CMakeFiles/cmTC_1bec4.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_1bec4.dir/test-static-assert.cpp.o
+        /usr/bin/c++   -pthread -maes -march=native  -o CMakeFiles/cmTC_1bec4.dir/test-static-assert.cpp.o -c /home/shawr/develop/crypto/tilt/cmake/test-static-assert.cpp
+        Linking CXX executable cmTC_1bec4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1bec4.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native  "CMakeFiles/cmTC_1bec4.dir/test-static-assert.cpp.o" -o cmTC_1bec4 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:852 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fcf_protection=full_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fcf_protection=full_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_015b1/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_015b1.dir/build.make CMakeFiles/cmTC_015b1.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm'
+        Building C object CMakeFiles/cmTC_015b1.dir/src.c.o
+        /usr/bin/cc -D_Werror__fcf_protection=full_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fcf-protection=full -o CMakeFiles/cmTC_015b1.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm/src.c
+        Linking C executable cmTC_015b1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_015b1.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_015b1.dir/src.c.o -o cmTC_015b1 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-TN03Nm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:853 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fcf_protection=full_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fcf_protection=full_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_036fa/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_036fa.dir/build.make CMakeFiles/cmTC_036fa.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP'
+        Building CXX object CMakeFiles/cmTC_036fa.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__fcf_protection=full_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fcf-protection=full -o CMakeFiles/cmTC_036fa.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP/src.cxx
+        Linking CXX executable cmTC_036fa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_036fa.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_036fa.dir/src.cxx.o -o cmTC_036fa 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-KQPxdP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:904 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=switch_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=switch_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_58055/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_58055.dir/build.make CMakeFiles/cmTC_58055.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5'
+        Building C object CMakeFiles/cmTC_58055.dir/src.c.o
+        /usr/bin/cc -D_Werror__Werror=switch_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=switch -o CMakeFiles/cmTC_58055.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5/src.c
+        Linking C executable cmTC_58055
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58055.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_58055.dir/src.c.o -o cmTC_58055 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-07niZ5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:905 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=switch_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=switch_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b6189/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b6189.dir/build.make CMakeFiles/cmTC_b6189.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC'
+        Building CXX object CMakeFiles/cmTC_b6189.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__Werror=switch_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=switch -o CMakeFiles/cmTC_b6189.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC/src.cxx
+        Linking CXX executable cmTC_b6189
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6189.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_b6189.dir/src.cxx.o -o cmTC_b6189 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-4lKMWC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:906 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=return_type_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=return_type_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9c0b7/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9c0b7.dir/build.make CMakeFiles/cmTC_9c0b7.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi'
+        Building C object CMakeFiles/cmTC_9c0b7.dir/src.c.o
+        /usr/bin/cc -D_Werror__Werror=return_type_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=return-type -o CMakeFiles/cmTC_9c0b7.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi/src.c
+        Linking C executable cmTC_9c0b7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c0b7.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_9c0b7.dir/src.c.o -o cmTC_9c0b7 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8A5Xgi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:907 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=return_type_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=return_type_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_70681/fast && gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_70681.dir/build.make CMakeFiles/cmTC_70681.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom'
+        Building CXX object CMakeFiles/cmTC_70681.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__Werror=return_type_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=return-type -o CMakeFiles/cmTC_70681.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom/src.cxx
+        Linking CXX executable cmTC_70681
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70681.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_70681.dir/src.cxx.o -o cmTC_70681 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-G65jom'
+        
+      exitCode: 0
+...

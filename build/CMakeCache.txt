@@ -477,7 +477,7 @@ USE_LTO:BOOL=false
 USE_READLINE:BOOL=ON
 
 //The tag portion of the Monero software version
-VERSIONTAG:STRING=b7c3d6e4d
+VERSIONTAG:STRING=815286390
 
 //Path to a library.
 Z:FILEPATH=/usr/lib64/libz.so

@@ -3,7 +3,7 @@
 [![ci/gh-actions/build](https://github.com/tilt-project/tilt/actions/workflows/build.yml/badge.svg)](https://github.com/tilt-project/tilt/actions/workflows/build.yml)
 [![ci/gh-actions/depends](https://github.com/tilt-project/tilt/actions/workflows/depends.yml/badge.svg)](https://github.com/tilt-project/tilt/actions/workflows/depends.yml)
 
-**Latest release: [v0.2.0.0 `Legacy Reborn`][tilt-releases-link]**
+**Latest release: [v0.1.0 `The Game Is Always Changing`][tilt-releases-link]**
 
 ## Table of Contents
 
@@ -41,7 +41,7 @@ Check out the project [documentation][tilt-docs-link], create an [issue][tilt-is
 
 [LICENSE](LICENSE)
 
-Copyright (c) 2018-2024 The Tilt Project.  
+Copyright (c) 2018-2024 The Nerve Project.  
 Copyright (c) 2014-2024 The Monero Project.  
 Copyright (c) 2017-2018 The Masari Project.  
 Portions Copyright (c) 2012-2013 The Cryptonote developers. 

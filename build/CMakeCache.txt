@@ -36,6 +36,9 @@ BUILD_DOCUMENTATION:BOOL=OFF
 //Build extras not needed for ordinary usage.
 BUILD_EXTRAS:BOOL=OFF
 
+//Build GUI dependencies.
+BUILD_GUI_DEPS:BOOL=OFF
+
 //Build internal libraries as shared
 BUILD_SHARED_LIBS:BOOL=OFF
 
@@ -338,13 +341,13 @@ COVERAGE:BOOL=OFF
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
 //Path to a library.
-GSSAPI_LIBRARY:FILEPATH=GSSAPI_LIBRARY-NOTFOUND
+GSSAPI_LIBRARY:FILEPATH=/usr/lib64/libgssapi_krb5.so
 
 //Path to a file.
-HIDAPI_INCLUDE_DIR:PATH=HIDAPI_INCLUDE_DIR-NOTFOUND
+HIDAPI_INCLUDE_DIR:PATH=/usr/include/hidapi
 
 //Path to a library.
-HIDAPI_LIBRARY:FILEPATH=HIDAPI_LIBRARY-NOTFOUND
+HIDAPI_LIBRARY:FILEPATH=/usr/lib64/libhidapi-libusb.so
 
 //LMDB Include path
 LMDB_INCLUDE:STRING=/home/shawr/develop/crypto/tilt/external/db_drivers/liblmdb
@@ -359,10 +362,10 @@ MANUAL_SUBMODULES:UNINITIALIZED=1
 MD_LIBRARY:FILEPATH=MD_LIBRARY-NOTFOUND
 
 //Path to a file.
-MINIUPNP_INCLUDE_DIR:PATH=MINIUPNP_INCLUDE_DIR-NOTFOUND
+MINIUPNP_INCLUDE_DIR:PATH=/usr/include/miniupnpc
 
 //Path to a library.
-MINIUPNP_LIBRARY:FILEPATH=MINIUPNP_LIBRARY-NOTFOUND
+MINIUPNP_LIBRARY:FILEPATH=/usr/lib64/libminiupnpc.so
 
 //Path to a library.
 MINIUPNP_STATIC_LIBRARY:FILEPATH=MINIUPNP_STATIC_LIBRARY-NOTFOUND
@@ -372,6 +375,9 @@ NORM_LIBRARY:FILEPATH=NORM_LIBRARY-NOTFOUND
 
 //Explicitly disable AES support
 NO_AES:BOOL=OFF
+
+//Define NO_GETADDRINFO
+NO_GETADDRINFO:BOOL=OFF
 
 //Path to a library.
 OPENSSL_CRYPTO_LIBRARY:FILEPATH=/usr/lib64/libcrypto.so
@@ -383,7 +389,7 @@ OPENSSL_INCLUDE_DIR:PATH=/usr/include
 OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib64/libssl.so
 
 //Path to a library.
-PGM_LIBRARY:FILEPATH=PGM_LIBRARY-NOTFOUND
+PGM_LIBRARY:FILEPATH=/usr/lib64/libpgm.so
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
@@ -408,19 +414,19 @@ RELINK_TARGETS:BOOL=OFF
 RT:FILEPATH=/usr/lib64/librt.a
 
 //Path to a file.
-Readline_INCLUDE_DIR:PATH=Readline_INCLUDE_DIR-NOTFOUND
+Readline_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-Readline_LIBRARY:FILEPATH=Readline_LIBRARY-NOTFOUND
+Readline_LIBRARY:FILEPATH=/usr/lib64/libreadline.so
 
 //Path to a file.
-Readline_ROOT_DIR:PATH=Readline_ROOT_DIR-NOTFOUND
+Readline_ROOT_DIR:PATH=/usr
 
 //Use ASAN memory sanitizer
 SANITIZE:BOOL=OFF
 
 //Path to a library.
-SODIUM_LIBRARY:FILEPATH=SODIUM_LIBRARY-NOTFOUND
+SODIUM_LIBRARY:FILEPATH=/usr/lib64/libsodium.so
 
 //Install a hook that dumps stack on exception
 STACK_TRACE:BOOL=ON
@@ -432,13 +438,25 @@ STATIC:BOOL=OFF
 STRIP_TARGETS:BOOL=OFF
 
 //Path to a library.
-Termcap_LIBRARY:FILEPATH=Termcap_LIBRARY-NOTFOUND
+Termcap_LIBRARY:FILEPATH=/usr/lib64/libtinfo.so
 
 //Path to a file.
-UNBOUND_INCLUDE_DIR:PATH=UNBOUND_INCLUDE_DIR-NOTFOUND
+UNBOUND_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-UNBOUND_LIBRARIES:FILEPATH=UNBOUND_LIBRARIES-NOTFOUND
+UNBOUND_LIBRARIES:FILEPATH=/usr/lib64/libunbound.so
+
+//Build sample executables
+UPNPC_BUILD_SAMPLE:BOOL=OFF
+
+//Build shared library
+UPNPC_BUILD_SHARED:BOOL=OFF
+
+//Build static library
+UPNPC_BUILD_STATIC:BOOL=ON
+
+//Build test executables
+UPNPC_BUILD_TESTS:BOOL=OFF
 
 //Use ccache if a usable instance is found
 USE_CCACHE:BOOL=ON
@@ -458,14 +476,50 @@ USE_LTO:BOOL=false
 //Build with GNU readline support.
 USE_READLINE:BOOL=ON
 
+//The tag portion of the Monero software version
+VERSIONTAG:STRING=d789a6ffc
+
 //Path to a library.
 Z:FILEPATH=/usr/lib64/libz.so
 
 //Path to a file.
-ZMQ_INCLUDE_PATH:PATH=ZMQ_INCLUDE_PATH-NOTFOUND
+ZMQ_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a library.
-ZMQ_LIB:FILEPATH=ZMQ_LIB-NOTFOUND
+ZMQ_LIB:FILEPATH=/usr/lib64/libzmq.so
+
+//Dependencies for the target
+blockchain_db_LIB_DEPENDS:STATIC=general;common;general;cncrypto;general;ringct;general;lmdb;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+checkpoints_LIB_DEPENDS:STATIC=general;common;general;cncrypto;general;/usr/lib64/libboost_date_time.so;general;/usr/lib64/libboost_program_options.so;general;/usr/lib64/libboost_serialization.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+cncrypto_LIB_DEPENDS:STATIC=general;epee;general;/usr/lib64/libsodium.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+common_LIB_DEPENDS:STATIC=general;cncrypto;general;/usr/lib64/libunbound.so;general;/usr/lib64/libboost_date_time.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libssl.so;general;/usr/lib64/libcrypto.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+cryptonote_basic_LIB_DEPENDS:STATIC=general;common;general;cncrypto;general;checkpoints;general;device;general;/usr/lib64/libboost_date_time.so;general;/usr/lib64/libboost_program_options.so;general;/usr/lib64/libboost_serialization.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+cryptonote_core_LIB_DEPENDS:STATIC=general;version;general;common;general;cncrypto;general;blockchain_db;general;multisig;general;ringct;general;device;general;/usr/lib64/libboost_date_time.so;general;/usr/lib64/libboost_program_options.so;general;/usr/lib64/libboost_serialization.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+cryptonote_protocol_LIB_DEPENDS:STATIC=general;p2p;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+daemon_messages_LIB_DEPENDS:STATIC=general;cryptonote_core;general;cryptonote_protocol;general;version;general;serialization;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+daemon_rpc_server_LIB_DEPENDS:STATIC=general;rpc;general;cryptonote_core;general;cryptonote_protocol;general;version;general;daemon_messages;general;serialization;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libzmq.so;general;/usr/lib64/libpgm.so;general;/usr/lib64/libgssapi_krb5.so;general;/usr/lib64/libsodium.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+daemonizer_LIB_DEPENDS:STATIC=general;common;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_program_options.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+device_LIB_DEPENDS:STATIC=general;/usr/lib64/libhidapi-libusb.so;general;cncrypto;general;ringct_basic;general;/usr/lib64/libcrypto.so;general;/usr/lib64/libboost_serialization.so;general;version;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
 
 //Value Computed by CMake
 easylogging_BINARY_DIR:STATIC=/home/shawr/develop/crypto/tilt/build/external/easylogging++
@@ -476,20 +530,74 @@ easylogging_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 easylogging_SOURCE_DIR:STATIC=/home/shawr/develop/crypto/tilt/external/easylogging++
 
-//Value Computed by CMake
-monero_BINARY_DIR:STATIC=/home/shawr/develop/crypto/tilt/build
+//Dependencies for the target
+epee_LIB_DEPENDS:STATIC=general;easylogging;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libssl.so;general;/usr/lib64/libcrypto.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+epee_readline_LIB_DEPENDS:STATIC=general;easylogging;general;/usr/lib64/libreadline.so;
+
+//Path to a program.
+iwyu_tool_path:FILEPATH=iwyu_tool_path-NOTFOUND
+
+//Dependencies for the target
+lmdb_lib_LIB_DEPENDS:STATIC=general;common;general;lmdb;
 
 //Value Computed by CMake
-monero_IS_TOP_LEVEL:STATIC=ON
+miniupnpc_BINARY_DIR:STATIC=/home/shawr/develop/crypto/tilt/build/external/miniupnp/miniupnpc
 
 //Value Computed by CMake
-monero_SOURCE_DIR:STATIC=/home/shawr/develop/crypto/tilt
+miniupnpc_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+miniupnpc_SOURCE_DIR:STATIC=/home/shawr/develop/crypto/tilt/external/miniupnp/miniupnpc
+
+//Dependencies for the target
+mnemonics_LIB_DEPENDS:STATIC=general;epee;general;easylogging;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Value Computed by CMake
+monero_BINARY_DIR:STATIC=/home/shawr/develop/crypto/tilt/build/src/cryptonote_protocol
+
+//Value Computed by CMake
+monero_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+monero_SOURCE_DIR:STATIC=/home/shawr/develop/crypto/tilt/src/cryptonote_protocol
+
+//Dependencies for the target
+multisig_LIB_DEPENDS:STATIC=general;ringct;general;cryptonote_basic;general;common;general;cncrypto;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+net_LIB_DEPENDS:STATIC=general;common;general;epee;general;/usr/lib64/libzmq.so;general;/usr/lib64/libpgm.so;general;/usr/lib64/libgssapi_krb5.so;general;/usr/lib64/libsodium.so;
+
+//Dependencies for the target
+p2p_LIB_DEPENDS:STATIC=general;version;general;cryptonote_core;general;net;general;libminiupnpc-static;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_program_options.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libboost_serialization.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib64/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib64/libssl.so
+
+//Dependencies for the target
+ringct_LIB_DEPENDS:STATIC=general;common;general;cncrypto;general;cryptonote_basic;general;device;general;/usr/lib64/libssl.so;general;/usr/lib64/libcrypto.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+ringct_basic_LIB_DEPENDS:STATIC=general;common;general;cncrypto;general;/usr/lib64/libssl.so;general;/usr/lib64/libcrypto.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+rpc_LIB_DEPENDS:STATIC=general;rpc_base;general;common;general;cryptonote_core;general;cryptonote_protocol;general;net;general;version;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+rpc_base_LIB_DEPENDS:STATIC=general;common;general;epee;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libboost_program_options.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+serialization_LIB_DEPENDS:STATIC=general;cryptonote_core;general;cryptonote_protocol;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+wallet_LIB_DEPENDS:STATIC=general;rpc_base;general;multisig;general;common;general;cryptonote_core;general;mnemonics;general;net;general;lmdb;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_serialization.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
+
+//Dependencies for the target
+wallet_api_LIB_DEPENDS:STATIC=general;wallet;general;common;general;cryptonote_core;general;mnemonics;general;lmdb;general;/usr/lib64/libboost_chrono.so;general;/usr/lib64/libboost_serialization.so;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/libboost_regex.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
 
 
 ########################
@@ -675,7 +783,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=31
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -720,8 +828,10 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Backtrace
 FIND_PACKAGE_MESSAGE_DETAILS_Backtrace:INTERNAL=[/usr/include][v()]
-//Details about finding Git
-FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.47.3()]
+//Details about finding HIDAPI
+FIND_PACKAGE_MESSAGE_DETAILS_HIDAPI:INTERNAL=[/usr/lib64/libhidapi-libusb.so][/usr/include/hidapi][v()]
+//Details about finding MiniUPnPc
+FIND_PACKAGE_MESSAGE_DETAILS_MiniUPnPc:INTERNAL=[/usr/include/miniupnpc][/usr/lib64/libminiupnpc.so][v()]
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib64/libcrypto.so][/usr/include][c ][v3.5.1()]
 //Details about finding PythonInterp
@@ -731,13 +841,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Have function rl_filename_completion_function
-HAVE_COMPLETION_FUNCTION:INTERNAL=
-//Have function rl_filename_completion_function
-HAVE_COMPLETION_FUNCTION_TC:INTERNAL=
+HAVE_COMPLETION_FUNCTION:INTERNAL=1
 //Have function rl_copy_text
-HAVE_COPY_TEXT:INTERNAL=
-//Have function rl_copy_text
-HAVE_COPY_TEXT_TC:INTERNAL=
+HAVE_COPY_TEXT:INTERNAL=1
 //ADVANCED property for variable: HIDAPI_INCLUDE_DIR
 HIDAPI_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: HIDAPI_LIBRARY

@@ -1,0 +1,3 @@
+/home/shawr/develop/crypto/tilt/build/translations/CMakeFiles/generate_translations_header.dir
+/home/shawr/develop/crypto/tilt/build/translations/CMakeFiles/edit_cache.dir
+/home/shawr/develop/crypto/tilt/build/translations/CMakeFiles/rebuild_cache.dir

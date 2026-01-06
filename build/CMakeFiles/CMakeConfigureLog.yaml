@@ -1,0 +1,1965 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      The system is: Linux - 5.14.0-611.16.1.el9_7.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/shawr/develop/crypto/tilt/build/CMakeFiles/3.26.5/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/shawr/develop/crypto/tilt/build/CMakeFiles/3.26.5/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:53 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c1946/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c1946.dir/build.make CMakeFiles/cmTC_c1946.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu'
+        Building C object CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_c1946.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c1946.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v2 -version -o /tmp/ccuSJCuo.s
+        GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/11/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: fda500c23ce11a6832dac628f898cd8a
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_c1946.dir/'
+         as -v --64 -o CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o /tmp/ccuSJCuo.s
+        GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-67.el9_7.1
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_c1946
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1946.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o -o cmTC_c1946 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c1946' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_c1946.'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9Gi02F.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_c1946 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c1946' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_c1946.'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/11/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c1946/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c1946.dir/build.make CMakeFiles/cmTC_c1946.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fjVPqu']
+        ignore line: [Building C object CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_c1946.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c1946.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v2 -version -o /tmp/ccuSJCuo.s]
+        ignore line: [GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: fda500c23ce11a6832dac628f898cd8a]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_c1946.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o /tmp/ccuSJCuo.s]
+        ignore line: [GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-67.el9_7.1]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_c1946]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1946.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o -o cmTC_c1946 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c1946' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_c1946.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9Gi02F.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_c1946 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc9Gi02F.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_c1946] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..]
+          arg [CMakeFiles/cmTC_c1946.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11] ==> [/usr/lib/gcc/x86_64-redhat-linux/11]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/11;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:53 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9b726/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9b726.dir/build.make CMakeFiles/cmTC_9b726.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV'
+        Building CXX object CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_9b726.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9b726.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v2 -version -o /tmp/ccyhcbHG.s
+        GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward
+         /usr/lib/gcc/x86_64-redhat-linux/11/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 6853d00618d026aa88cc8c38be95aaf1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_9b726.dir/'
+         as -v --64 -o CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyhcbHG.s
+        GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-67.el9_7.1
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_9b726
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b726.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9b726 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9b726' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_9b726.'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4DYXUD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9b726 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9b726' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_9b726.'
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11] ==> [/usr/include/c++/11]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux] ==> [/usr/include/c++/11/x86_64-redhat-linux]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward] ==> [/usr/include/c++/11/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/11;/usr/include/c++/11/x86_64-redhat-linux;/usr/include/c++/11/backward;/usr/lib/gcc/x86_64-redhat-linux/11/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:53 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9b726/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9b726.dir/build.make CMakeFiles/cmTC_9b726.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fG3UoV']
+        ignore line: [Building CXX object CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_9b726.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9b726.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v2 -version -o /tmp/ccyhcbHG.s]
+        ignore line: [GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-11) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-11)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 6853d00618d026aa88cc8c38be95aaf1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_9b726.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyhcbHG.s]
+        ignore line: [GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-67.el9_7.1]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_9b726]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b726.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9b726 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.rockylinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-11) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9b726' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_9b726.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4DYXUD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9b726 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc4DYXUD.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_9b726] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..]
+          arg [CMakeFiles/cmTC_9b726.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11] ==> [/usr/lib/gcc/x86_64-redhat-linux/11]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/11;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1102 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineASMCompiler.cmake:127 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:98 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      cc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)
+      Copyright (C) 2021 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:214 (add_linker_flag_if_supported)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wl,--no-undefined"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-Wl_--no-undefined_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a37f3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a37f3.dir/build.make CMakeFiles/cmTC_a37f3.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_a37f3.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -Wl,--no-undefined    -Wl,--no-undefined -o CMakeFiles/cmTC_a37f3.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_a37f3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a37f3.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,--no-undefined  CMakeFiles/cmTC_a37f3.dir/CheckLinkerFlag.c.o -o cmTC_a37f3 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:216 (add_linker_flag_if_supported)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wl,-undefined,error"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-Wl_-undefined_error_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c620e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c620e.dir/build.make CMakeFiles/cmTC_c620e.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_c620e.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -Wl,-undefined,error    -Wl,-undefined,error -o CMakeFiles/cmTC_c620e.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_c620e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c620e.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-undefined,error  CMakeFiles/cmTC_c620e.dir/CheckLinkerFlag.c.o -o cmTC_c620e 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:240 (try_compile)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project"
+      binary: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build"
+    buildResult:
+      variable: "SUCCESS"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile && /usr/bin/cmake -S/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project -B/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Scanning dependencies of target l0
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 14%] Building CXX object CMakeFiles/l0.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl0_EXPORTS  -fPIC -o CMakeFiles/l0.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 28%] Linking CXX shared library libl0.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l0.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared -Wl,-soname,libl0.so -o libl0.so CMakeFiles/l0.dir/incorrect_source.cpp.o 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 28%] Built target l0
+        /usr/bin/gmake  -f CMakeFiles/l1.dir/build.make CMakeFiles/l1.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/depend.internal".
+        Scanning dependencies of target l1
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l1.dir/build.make CMakeFiles/l1.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 42%] Building CXX object CMakeFiles/l1.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl1_EXPORTS  -fPIC -o CMakeFiles/l1.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 57%] Linking CXX shared module libl1.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l1.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared  -o libl1.so CMakeFiles/l1.dir/incorrect_source.cpp.o 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 57%] Built target l1
+        /usr/bin/gmake  -f CMakeFiles/l2.dir/build.make CMakeFiles/l2.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/depend.internal".
+        Scanning dependencies of target l2
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l2.dir/build.make CMakeFiles/l2.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 71%] Building CXX object CMakeFiles/l2.dir/incorrect_source.cpp.o
+        /usr/bin/c++    -o CMakeFiles/l2.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 85%] Linking CXX static library libl2.a
+        /usr/bin/cmake -P CMakeFiles/l2.dir/cmake_clean_target.cmake
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l2.dir/link.txt --verbose=1
+        /usr/bin/ar qc libl2.a CMakeFiles/l2.dir/incorrect_source.cpp.o
+        /usr/bin/ranlib libl2.a
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 85%] Built target l2
+        /usr/bin/gmake  -f CMakeFiles/l3.dir/build.make CMakeFiles/l3.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/depend.internal".
+        Scanning dependencies of target l3
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l3.dir/build.make CMakeFiles/l3.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [100%] Building CXX object CMakeFiles/l3.dir/incorrect_source.cpp.o
+        /usr/bin/c++    -o CMakeFiles/l3.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [100%] Built target l3
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:240 (try_compile)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project"
+      binary: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build"
+    buildResult:
+      variable: "SUCCESS"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile && /usr/bin/cmake -S/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project -B/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Scanning dependencies of target l0
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 14%] Building CXX object CMakeFiles/l0.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl0_EXPORTS  -fPIC -o CMakeFiles/l0.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 28%] Linking CXX shared library libl0.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l0.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared -Wl,-soname,libl0.so -o libl0.so CMakeFiles/l0.dir/incorrect_source.cpp.o 
+        /usr/bin/ld: CMakeFiles/l0.dir/incorrect_source.cpp.o: in function `symbol()':
+        incorrect_source.cpp:(.text+0x5): undefined reference to `undefined_symbol()'
+        collect2: error: ld returned 1 exit status
+        gmake[2]: *** [CMakeFiles/l0.dir/build.make:96: libl0.so] Error 1
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        gmake[1]: *** [CMakeFiles/Makefile2:89: CMakeFiles/l0.dir/all] Error 2
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        gmake: *** [Makefile:91: all] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:240 (try_compile)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project"
+      binary: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build"
+    buildResult:
+      variable: "SUCCESS"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile && /usr/bin/cmake -S/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project -B/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Scanning dependencies of target l0
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 14%] Building CXX object CMakeFiles/l0.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl0_EXPORTS  -fPIC -o CMakeFiles/l0.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 28%] Linking CXX shared library libl0.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l0.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared -Wl,-soname,libl0.so -o libl0.so CMakeFiles/l0.dir/incorrect_source.cpp.o 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 28%] Built target l0
+        /usr/bin/gmake  -f CMakeFiles/l1.dir/build.make CMakeFiles/l1.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l1.dir/depend.internal".
+        Scanning dependencies of target l1
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l1.dir/build.make CMakeFiles/l1.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 42%] Building CXX object CMakeFiles/l1.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl1_EXPORTS  -fPIC -o CMakeFiles/l1.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 57%] Linking CXX shared module libl1.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l1.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared  -o libl1.so CMakeFiles/l1.dir/incorrect_source.cpp.o 
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 57%] Built target l1
+        /usr/bin/gmake  -f CMakeFiles/l2.dir/build.make CMakeFiles/l2.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l2.dir/depend.internal".
+        Scanning dependencies of target l2
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l2.dir/build.make CMakeFiles/l2.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 71%] Building CXX object CMakeFiles/l2.dir/incorrect_source.cpp.o
+        /usr/bin/c++    -o CMakeFiles/l2.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 85%] Linking CXX static library libl2.a
+        /usr/bin/cmake -P CMakeFiles/l2.dir/cmake_clean_target.cmake
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l2.dir/link.txt --verbose=1
+        /usr/bin/ar qc libl2.a CMakeFiles/l2.dir/incorrect_source.cpp.o
+        /usr/bin/ranlib libl2.a
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 85%] Built target l2
+        /usr/bin/gmake  -f CMakeFiles/l3.dir/build.make CMakeFiles/l3.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l3.dir/depend.internal".
+        Scanning dependencies of target l3
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l3.dir/build.make CMakeFiles/l3.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [100%] Building CXX object CMakeFiles/l3.dir/incorrect_source.cpp.o
+        /usr/bin/c++    -o CMakeFiles/l3.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [100%] Built target l3
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:240 (try_compile)"
+      - "CMakeLists.txt:253 (forbid_undefined_symbols)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project"
+      binary: "/home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build"
+    buildResult:
+      variable: "SUCCESS"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build//CMakeFiles/CMakeTmp/test_project/build
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile && /usr/bin/cmake -S/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project -B/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/depend
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        cd /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/DependInfo.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Dependee "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build/CMakeFiles/l0.dir/depend.internal".
+        Scanning dependencies of target l0
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        /usr/bin/gmake  -f CMakeFiles/l0.dir/build.make CMakeFiles/l0.dir/build
+        gmake[2]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        [ 14%] Building CXX object CMakeFiles/l0.dir/incorrect_source.cpp.o
+        /usr/bin/c++ -Dl0_EXPORTS  -fPIC -o CMakeFiles/l0.dir/incorrect_source.cpp.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/incorrect_source.cpp
+        [ 28%] Linking CXX shared library libl0.so
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/l0.dir/link.txt --verbose=1
+        /usr/bin/c++ -fPIC  -Wl,--no-undefined -Wl,-undefined,error -shared -Wl,-soname,libl0.so -o libl0.so CMakeFiles/l0.dir/incorrect_source.cpp.o 
+        /usr/bin/ld: CMakeFiles/l0.dir/incorrect_source.cpp.o: in function `symbol()':
+        incorrect_source.cpp:(.text+0x5): undefined reference to `undefined_symbol()'
+        collect2: error: ld returned 1 exit status
+        gmake[2]: *** [CMakeFiles/l0.dir/build.make:96: libl0.so] Error 1
+        gmake[2]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        gmake[1]: *** [CMakeFiles/Makefile2:89: CMakeFiles/l0.dir/all] Error 2
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp/test_project/build'
+        gmake: *** [Makefile:91: all] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:568 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-vdTqCT"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-vdTqCT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-vdTqCT
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b957f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b957f.dir/build.make CMakeFiles/cmTC_b957f.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-vdTqCT'
+        Building C object CMakeFiles/cmTC_b957f.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b957f.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-vdTqCT/src.c
+        Linking C executable cmTC_b957f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b957f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_b957f.dir/src.c.o -o cmTC_b957f 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-vdTqCT'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:569 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__pthread_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6Vmyz0"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6Vmyz0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__pthread_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6Vmyz0
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f5862/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f5862.dir/build.make CMakeFiles/cmTC_f5862.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6Vmyz0'
+        Building C object CMakeFiles/cmTC_f5862.dir/src.c.o
+        /usr/bin/cc -D_Werror__pthread_c  -Werror -pthread -o CMakeFiles/cmTC_f5862.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6Vmyz0/src.c
+        Linking C executable cmTC_f5862
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5862.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_f5862.dir/src.c.o -o cmTC_f5862 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6Vmyz0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:570 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__pthread_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ITsbAZ"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ITsbAZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__pthread_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ITsbAZ
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b65bb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b65bb.dir/build.make CMakeFiles/cmTC_b65bb.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ITsbAZ'
+        Building CXX object CMakeFiles/cmTC_b65bb.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__pthread_cxx  -Werror -pthread -o CMakeFiles/cmTC_b65bb.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ITsbAZ/src.cxx
+        Linking CXX executable cmTC_b65bb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b65bb.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_b65bb.dir/src.cxx.o -o cmTC_b65bb 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ITsbAZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "CMakeLists.txt:160 (check_library_exists)"
+      - "CMakeLists.txt:608 (add_definition_if_library_exists)"
+    checks:
+      - "Looking for memset_s in c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "memset_s_library"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f768e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f768e.dir/build.make CMakeFiles/cmTC_f768e.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9'
+        Building C object CMakeFiles/cmTC_f768e.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -DCHECK_FUNCTION_EXISTS=memset_s -o CMakeFiles/cmTC_f768e.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9/CheckFunctionExists.c
+        Linking C executable cmTC_f768e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f768e.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -DCHECK_FUNCTION_EXISTS=memset_s CMakeFiles/cmTC_f768e.dir/CheckFunctionExists.c.o -o cmTC_f768e   -L/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9/string.h  -Wl,-rpath,/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9/string.h -lc 
+        /usr/bin/ld: CMakeFiles/cmTC_f768e.dir/CheckFunctionExists.c.o: in function `main':
+        CheckFunctionExists.c:(.text+0x10): undefined reference to `memset_s'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_f768e.dir/build.make:99: cmTC_f768e] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-IR2Ok9'
+        gmake: *** [Makefile:127: cmTC_f768e/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "CMakeLists.txt:160 (check_library_exists)"
+      - "CMakeLists.txt:609 (add_definition_if_library_exists)"
+    checks:
+      - "Looking for explicit_bzero in c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "explicit_bzero_library"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_74601/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_74601.dir/build.make CMakeFiles/cmTC_74601.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q'
+        Building C object CMakeFiles/cmTC_74601.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -DCHECK_FUNCTION_EXISTS=explicit_bzero -o CMakeFiles/cmTC_74601.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q/CheckFunctionExists.c
+        Linking C executable cmTC_74601
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74601.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -DCHECK_FUNCTION_EXISTS=explicit_bzero CMakeFiles/cmTC_74601.dir/CheckFunctionExists.c.o -o cmTC_74601   -L/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q/strings.h  -Wl,-rpath,/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q/strings.h -lc 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ZOq59Q'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "CMakeLists.txt:152 (check_function_exists)"
+      - "CMakeLists.txt:610 (add_definition_if_function_found)"
+    checks:
+      - "Looking for strptime"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6FxbRe"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6FxbRe"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "strptime_function"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6FxbRe
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6adc9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6adc9.dir/build.make CMakeFiles/cmTC_6adc9.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6FxbRe'
+        Building C object CMakeFiles/cmTC_6adc9.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -DCHECK_FUNCTION_EXISTS=strptime -o CMakeFiles/cmTC_6adc9.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6FxbRe/CheckFunctionExists.c
+        Linking C executable cmTC_6adc9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6adc9.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -DCHECK_FUNCTION_EXISTS=strptime CMakeFiles/cmTC_6adc9.dir/CheckFunctionExists.c.o -o cmTC_6adc9 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6FxbRe'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:145 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:71 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "cmake/FindBacktrace.cmake:61 (check_symbol_exists)"
+      - "external/easylogging++/CMakeLists.txt:37 (find_package)"
+    checks:
+      - "Looking for backtrace"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ELopFk"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ELopFk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Backtrace_SYM_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ELopFk
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b9410/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b9410.dir/build.make CMakeFiles/cmTC_b9410.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ELopFk'
+        Building C object CMakeFiles/cmTC_b9410.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -pthread  -o CMakeFiles/cmTC_b9410.dir/CheckSymbolExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ELopFk/CheckSymbolExists.c
+        Linking C executable cmTC_b9410
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9410.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread  CMakeFiles/cmTC_b9410.dir/CheckSymbolExists.c.o -o cmTC_b9410 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-ELopFk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:733 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test CC_SUPPORTS_MARCH_NATIVE"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Mxi0QQ"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Mxi0QQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "CC_SUPPORTS_MARCH_NATIVE"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Mxi0QQ
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8d687/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8d687.dir/build.make CMakeFiles/cmTC_8d687.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Mxi0QQ'
+        Building C object CMakeFiles/cmTC_8d687.dir/src.c.o
+        /usr/bin/cc -DCC_SUPPORTS_MARCH_NATIVE  -pthread    -march=native -o CMakeFiles/cmTC_8d687.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Mxi0QQ/src.c
+        Linking C executable cmTC_8d687
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d687.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread  CMakeFiles/cmTC_8d687.dir/src.c.o -o cmTC_8d687 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Mxi0QQ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:804 (try_compile)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "STATIC_ASSERT_RES"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ae15b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ae15b.dir/build.make CMakeFiles/cmTC_ae15b.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_ae15b.dir/test-static-assert.c.o
+        /usr/bin/cc   -pthread -maes -march=native  -std=gnu11 -o CMakeFiles/cmTC_ae15b.dir/test-static-assert.c.o -c /home/shawr/develop/crypto/tilt/cmake/test-static-assert.c
+        Linking C executable cmTC_ae15b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae15b.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native  "CMakeFiles/cmTC_ae15b.dir/test-static-assert.c.o" -o cmTC_ae15b 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:811 (try_compile)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "STATIC_ASSERT_CPP_RES"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6a05c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6a05c.dir/build.make CMakeFiles/cmTC_6a05c.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_6a05c.dir/test-static-assert.cpp.o
+        /usr/bin/c++   -pthread -maes -march=native  -o CMakeFiles/cmTC_6a05c.dir/test-static-assert.cpp.o -c /home/shawr/develop/crypto/tilt/cmake/test-static-assert.cpp
+        Linking CXX executable cmTC_6a05c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a05c.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native  "CMakeFiles/cmTC_6a05c.dir/test-static-assert.cpp.o" -o cmTC_6a05c 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/static-assert/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:837 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Wformat_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6erW42"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6erW42"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Wformat_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6erW42
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b4fe6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b4fe6.dir/build.make CMakeFiles/cmTC_b4fe6.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6erW42'
+        Building C object CMakeFiles/cmTC_b4fe6.dir/src.c.o
+        /usr/bin/cc -D_Werror__Wformat_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Wformat -o CMakeFiles/cmTC_b4fe6.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6erW42/src.c
+        Linking C executable cmTC_b4fe6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4fe6.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_b4fe6.dir/src.c.o -o cmTC_b4fe6 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-6erW42'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:838 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Wformat_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-nfO5c0"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-nfO5c0"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Wformat_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-nfO5c0
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3816a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3816a.dir/build.make CMakeFiles/cmTC_3816a.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-nfO5c0'
+        Building CXX object CMakeFiles/cmTC_3816a.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__Wformat_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Wformat -o CMakeFiles/cmTC_3816a.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-nfO5c0/src.cxx
+        Linking CXX executable cmTC_3816a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3816a.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_3816a.dir/src.cxx.o -o cmTC_3816a 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-nfO5c0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:839 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Wformat_security_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BBV7Dg"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BBV7Dg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Wformat_security_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BBV7Dg
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f29ba/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f29ba.dir/build.make CMakeFiles/cmTC_f29ba.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BBV7Dg'
+        Building C object CMakeFiles/cmTC_f29ba.dir/src.c.o
+        /usr/bin/cc -D_Werror__Wformat_security_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Wformat-security -o CMakeFiles/cmTC_f29ba.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BBV7Dg/src.c
+        cc1: error: '-Wformat-security' ignored without '-Wformat' [-Werror=format-security]
+        cc1: all warnings being treated as errors
+        gmake[1]: *** [CMakeFiles/cmTC_f29ba.dir/build.make:78: CMakeFiles/cmTC_f29ba.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BBV7Dg'
+        gmake: *** [Makefile:127: cmTC_f29ba/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:840 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Wformat_security_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-iZtMCX"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-iZtMCX"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Wformat_security_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-iZtMCX
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a14fe/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a14fe.dir/build.make CMakeFiles/cmTC_a14fe.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-iZtMCX'
+        Building CXX object CMakeFiles/cmTC_a14fe.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__Wformat_security_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Wformat-security -o CMakeFiles/cmTC_a14fe.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-iZtMCX/src.cxx
+        cc1plus: error: '-Wformat-security' ignored without '-Wformat' [-Werror=format-security]
+        cc1plus: all warnings being treated as errors
+        gmake[1]: *** [CMakeFiles/cmTC_a14fe.dir/build.make:78: CMakeFiles/cmTC_a14fe.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-iZtMCX'
+        gmake: *** [Makefile:127: cmTC_a14fe/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:844 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fstack_protector_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-x0xqWm"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-x0xqWm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fstack_protector_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-x0xqWm
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7c605/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7c605.dir/build.make CMakeFiles/cmTC_7c605.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-x0xqWm'
+        Building C object CMakeFiles/cmTC_7c605.dir/src.c.o
+        /usr/bin/cc -D_Werror__fstack_protector_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fstack-protector -o CMakeFiles/cmTC_7c605.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-x0xqWm/src.c
+        Linking C executable cmTC_7c605
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c605.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_7c605.dir/src.c.o -o cmTC_7c605 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-x0xqWm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:845 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fstack_protector_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8OxRFc"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8OxRFc"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fstack_protector_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8OxRFc
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_73d7d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_73d7d.dir/build.make CMakeFiles/cmTC_73d7d.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8OxRFc'
+        Building CXX object CMakeFiles/cmTC_73d7d.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__fstack_protector_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fstack-protector -o CMakeFiles/cmTC_73d7d.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8OxRFc/src.cxx
+        Linking CXX executable cmTC_73d7d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73d7d.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_73d7d.dir/src.cxx.o -o cmTC_73d7d 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-8OxRFc'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:846 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fstack_protector_strong_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0feTsM"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0feTsM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fstack_protector_strong_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0feTsM
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_70225/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_70225.dir/build.make CMakeFiles/cmTC_70225.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0feTsM'
+        Building C object CMakeFiles/cmTC_70225.dir/src.c.o
+        /usr/bin/cc -D_Werror__fstack_protector_strong_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fstack-protector-strong -o CMakeFiles/cmTC_70225.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0feTsM/src.c
+        Linking C executable cmTC_70225
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70225.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_70225.dir/src.c.o -o cmTC_70225 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0feTsM'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:847 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fstack_protector_strong_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-N2rvJP"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-N2rvJP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fstack_protector_strong_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-N2rvJP
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5ab00/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5ab00.dir/build.make CMakeFiles/cmTC_5ab00.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-N2rvJP'
+        Building CXX object CMakeFiles/cmTC_5ab00.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__fstack_protector_strong_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fstack-protector-strong -o CMakeFiles/cmTC_5ab00.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-N2rvJP/src.cxx
+        Linking CXX executable cmTC_5ab00
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ab00.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_5ab00.dir/src.cxx.o -o cmTC_5ab00 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-N2rvJP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:852 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fcf_protection=full_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fOzd6r"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fOzd6r"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fcf_protection=full_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fOzd6r
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_062e8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_062e8.dir/build.make CMakeFiles/cmTC_062e8.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fOzd6r'
+        Building C object CMakeFiles/cmTC_062e8.dir/src.c.o
+        /usr/bin/cc -D_Werror__fcf_protection=full_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fcf-protection=full -o CMakeFiles/cmTC_062e8.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fOzd6r/src.c
+        Linking C executable cmTC_062e8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_062e8.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_062e8.dir/src.c.o -o cmTC_062e8 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-fOzd6r'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:853 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fcf_protection=full_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-uxXch8"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-uxXch8"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fcf_protection=full_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-uxXch8
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0eeb6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0eeb6.dir/build.make CMakeFiles/cmTC_0eeb6.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-uxXch8'
+        Building CXX object CMakeFiles/cmTC_0eeb6.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__fcf_protection=full_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fcf-protection=full -o CMakeFiles/cmTC_0eeb6.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-uxXch8/src.cxx
+        Linking CXX executable cmTC_0eeb6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0eeb6.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_0eeb6.dir/src.cxx.o -o cmTC_0eeb6 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-uxXch8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:856 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fstack_clash_protection_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-XmfJrA"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-XmfJrA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fstack_clash_protection_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-XmfJrA
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3c7d1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3c7d1.dir/build.make CMakeFiles/cmTC_3c7d1.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-XmfJrA'
+        Building C object CMakeFiles/cmTC_3c7d1.dir/src.c.o
+        /usr/bin/cc -D_Werror__fstack_clash_protection_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fstack-clash-protection -o CMakeFiles/cmTC_3c7d1.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-XmfJrA/src.c
+        Linking C executable cmTC_3c7d1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c7d1.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_3c7d1.dir/src.c.o -o cmTC_3c7d1 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-XmfJrA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:857 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__fstack_clash_protection_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-chXMCE"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-chXMCE"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__fstack_clash_protection_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-chXMCE
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_570cf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_570cf.dir/build.make CMakeFiles/cmTC_570cf.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-chXMCE'
+        Building CXX object CMakeFiles/cmTC_570cf.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__fstack_clash_protection_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -fstack-clash-protection -o CMakeFiles/cmTC_570cf.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-chXMCE/src.cxx
+        Linking CXX executable cmTC_570cf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_570cf.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_570cf.dir/src.cxx.o -o cmTC_570cf 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-chXMCE'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:875 (add_linker_flag_if_supported)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-pie"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-pie_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e25b0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e25b0.dir/build.make CMakeFiles/cmTC_e25b0.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_e25b0.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -pie    -pie -o CMakeFiles/cmTC_e25b0.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_e25b0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e25b0.dir/link.txt --verbose=1
+        /usr/bin/cc -pie  CMakeFiles/cmTC_e25b0.dir/CheckLinkerFlag.c.o -o cmTC_e25b0 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:878 (add_linker_flag_if_supported)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wl,-z,relro"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-Wl_-z_relro_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_58c90/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_58c90.dir/build.make CMakeFiles/cmTC_58c90.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_58c90.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -Wl,-z,relro    -Wl,-z,relro -o CMakeFiles/cmTC_58c90.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_58c90
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58c90.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-z,relro  CMakeFiles/cmTC_58c90.dir/CheckLinkerFlag.c.o -o cmTC_58c90 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:879 (add_linker_flag_if_supported)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wl,-z,now"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-Wl_-z_now_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_756bf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_756bf.dir/build.make CMakeFiles/cmTC_756bf.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_756bf.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -Wl,-z,now    -Wl,-z,now -o CMakeFiles/cmTC_756bf.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_756bf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_756bf.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-z,now  CMakeFiles/cmTC_756bf.dir/CheckLinkerFlag.c.o -o cmTC_756bf 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:880 (add_linker_flag_if_supported)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wl,-z,noexecstack"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-Wl_-z_noexecstack_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f4ab9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f4ab9.dir/build.make CMakeFiles/cmTC_f4ab9.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f4ab9.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -Wl,-z,noexecstack    -Wl,-z,noexecstack -o CMakeFiles/cmTC_f4ab9.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_f4ab9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4ab9.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-z,noexecstack  CMakeFiles/cmTC_f4ab9.dir/CheckLinkerFlag.c.o -o cmTC_f4ab9 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckLinkerFlag.cmake:13 (try_compile)"
+      - "CMakeLists.txt:144 (check_linker_flag)"
+      - "CMakeLists.txt:884 (add_linker_flag_if_supported)"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-Wl,-z,noexecheap"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "-Wl_-z_noexecheap_ld"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9d261/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9d261.dir/build.make CMakeFiles/cmTC_9d261.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_9d261.dir/CheckLinkerFlag.c.o
+        /usr/bin/cc   -Wl,-z,noexecheap    -Wl,-z,noexecheap -o CMakeFiles/cmTC_9d261.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+        Linking C executable cmTC_9d261
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d261.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-z,noexecheap  CMakeFiles/cmTC_9d261.dir/CheckLinkerFlag.c.o -o cmTC_9d261 
+        /usr/bin/ld: warning: -z noexecheap ignored
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:904 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=switch_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BeF9Ha"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BeF9Ha"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=switch_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BeF9Ha
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_18d2d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_18d2d.dir/build.make CMakeFiles/cmTC_18d2d.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BeF9Ha'
+        Building C object CMakeFiles/cmTC_18d2d.dir/src.c.o
+        /usr/bin/cc -D_Werror__Werror=switch_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=switch -o CMakeFiles/cmTC_18d2d.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BeF9Ha/src.c
+        Linking C executable cmTC_18d2d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18d2d.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_18d2d.dir/src.c.o -o cmTC_18d2d 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-BeF9Ha'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:905 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=switch_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-LDSf3c"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-LDSf3c"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=switch_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-LDSf3c
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b4fb9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b4fb9.dir/build.make CMakeFiles/cmTC_b4fb9.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-LDSf3c'
+        Building CXX object CMakeFiles/cmTC_b4fb9.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__Werror=switch_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=switch -o CMakeFiles/cmTC_b4fb9.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-LDSf3c/src.cxx
+        Linking CXX executable cmTC_b4fb9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4fb9.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_b4fb9.dir/src.cxx.o -o cmTC_b4fb9 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-LDSf3c'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:126 (check_c_compiler_flag)"
+      - "CMakeLists.txt:906 (add_c_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=return_type_c"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-JCuh50"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-JCuh50"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=return_type_c"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-JCuh50
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_efc92/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_efc92.dir/build.make CMakeFiles/cmTC_efc92.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-JCuh50'
+        Building C object CMakeFiles/cmTC_efc92.dir/src.c.o
+        /usr/bin/cc -D_Werror__Werror=return_type_c  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=return-type -o CMakeFiles/cmTC_efc92.dir/src.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-JCuh50/src.c
+        Linking C executable cmTC_efc92
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efc92.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_efc92.dir/src.c.o -o cmTC_efc92 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-JCuh50'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:135 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:907 (add_cxx_flag_if_supported)"
+    checks:
+      - "Performing Test _Werror__Werror=return_type_cxx"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0LmD07"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0LmD07"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "_Werror__Werror=return_type_cxx"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0LmD07
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8cb89/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8cb89.dir/build.make CMakeFiles/cmTC_8cb89.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0LmD07'
+        Building CXX object CMakeFiles/cmTC_8cb89.dir/src.cxx.o
+        /usr/bin/c++ -D_Werror__Werror=return_type_cxx  -pthread -maes -march=native -fno-strict-aliasing    -Werror -Werror=return-type -o CMakeFiles/cmTC_8cb89.dir/src.cxx.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0LmD07/src.cxx
+        Linking CXX executable cmTC_8cb89
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cb89.dir/link.txt --verbose=1
+        /usr/bin/c++  -pthread -maes -march=native -fno-strict-aliasing  CMakeFiles/cmTC_8cb89.dir/src.cxx.o -o cmTC_8cb89 
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-0LmD07'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "cmake/FindReadline.cmake:65 (check_function_exists)"
+      - "CMakeLists.txt:1168 (find_package)"
+    checks:
+      - "Looking for rl_copy_text"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-W3gR46"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-W3gR46"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: "  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack "
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "HAVE_COPY_TEXT"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-W3gR46
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_076b6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_076b6.dir/build.make CMakeFiles/cmTC_076b6.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-W3gR46'
+        Building C object CMakeFiles/cmTC_076b6.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_copy_text -o CMakeFiles/cmTC_076b6.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-W3gR46/CheckFunctionExists.c
+        Linking C executable cmTC_076b6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_076b6.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_copy_text   -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack   CMakeFiles/cmTC_076b6.dir/CheckFunctionExists.c.o -o cmTC_076b6 
+        /usr/bin/ld: CMakeFiles/cmTC_076b6.dir/CheckFunctionExists.c.o: in function `main':
+        CheckFunctionExists.c:(.text+0x14): undefined reference to `rl_copy_text'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_076b6.dir/build.make:99: cmTC_076b6] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-W3gR46'
+        gmake: *** [Makefile:127: cmTC_076b6/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "cmake/FindReadline.cmake:66 (check_function_exists)"
+      - "CMakeLists.txt:1168 (find_package)"
+    checks:
+      - "Looking for rl_filename_completion_function"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-MAGwSu"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-MAGwSu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: "  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack "
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "HAVE_COMPLETION_FUNCTION"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-MAGwSu
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0303e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0303e.dir/build.make CMakeFiles/cmTC_0303e.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-MAGwSu'
+        Building C object CMakeFiles/cmTC_0303e.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_filename_completion_function -o CMakeFiles/cmTC_0303e.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-MAGwSu/CheckFunctionExists.c
+        Linking C executable cmTC_0303e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0303e.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_filename_completion_function   -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack   CMakeFiles/cmTC_0303e.dir/CheckFunctionExists.c.o -o cmTC_0303e 
+        /usr/bin/ld: CMakeFiles/cmTC_0303e.dir/CheckFunctionExists.c.o: in function `main':
+        CheckFunctionExists.c:(.text+0x14): undefined reference to `rl_filename_completion_function'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_0303e.dir/build.make:99: cmTC_0303e] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-MAGwSu'
+        gmake: *** [Makefile:127: cmTC_0303e/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "cmake/FindReadline.cmake:72 (check_function_exists)"
+      - "CMakeLists.txt:1168 (find_package)"
+    checks:
+      - "Looking for rl_copy_text"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-F8TDIG"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-F8TDIG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: "  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack "
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "HAVE_COPY_TEXT_TC"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-F8TDIG
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ed785/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ed785.dir/build.make CMakeFiles/cmTC_ed785.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-F8TDIG'
+        Building C object CMakeFiles/cmTC_ed785.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_copy_text -o CMakeFiles/cmTC_ed785.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-F8TDIG/CheckFunctionExists.c
+        Linking C executable cmTC_ed785
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed785.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_copy_text   -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack   CMakeFiles/cmTC_ed785.dir/CheckFunctionExists.c.o -o cmTC_ed785 
+        /usr/bin/ld: CMakeFiles/cmTC_ed785.dir/CheckFunctionExists.c.o: in function `main':
+        CheckFunctionExists.c:(.text+0x14): undefined reference to `rl_copy_text'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_ed785.dir/build.make:99: cmTC_ed785] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-F8TDIG'
+        gmake: *** [Makefile:127: cmTC_ed785/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "cmake/FindReadline.cmake:73 (check_function_exists)"
+      - "CMakeLists.txt:1168 (find_package)"
+    checks:
+      - "Looking for rl_filename_completion_function"
+    directories:
+      source: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Edjv31"
+      binary: "/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Edjv31"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing"
+      CMAKE_EXE_LINKER_FLAGS: "  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack "
+      CMAKE_MODULE_PATH: "/home/shawr/develop/crypto/tilt/cmake;/home/shawr/develop/crypto/tilt/cmake"
+    buildResult:
+      variable: "HAVE_COMPLETION_FUNCTION_TC"
+      cached: true
+      stdout: |
+        Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Edjv31
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f8415/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f8415.dir/build.make CMakeFiles/cmTC_f8415.dir/build
+        gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Edjv31'
+        Building C object CMakeFiles/cmTC_f8415.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_filename_completion_function -o CMakeFiles/cmTC_f8415.dir/CheckFunctionExists.c.o -c /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Edjv31/CheckFunctionExists.c
+        Linking C executable cmTC_f8415
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8415.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -fstack-protector -fstack-protector-strong -fcf-protection=full -fstack-clash-protection -Werror=switch -Werror=return-type -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_filename_completion_function   -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack   CMakeFiles/cmTC_f8415.dir/CheckFunctionExists.c.o -o cmTC_f8415 
+        /usr/bin/ld: CMakeFiles/cmTC_f8415.dir/CheckFunctionExists.c.o: in function `main':
+        CheckFunctionExists.c:(.text+0x14): undefined reference to `rl_filename_completion_function'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_f8415.dir/build.make:99: cmTC_f8415] Error 1
+        gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeScratch/TryCompile-Edjv31'
+        gmake: *** [Makefile:127: cmTC_f8415/fast] Error 2
+        
+      exitCode: 2
+...

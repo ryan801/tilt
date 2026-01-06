@@ -1,0 +1,84 @@
+Determining if the -Wl,--no-undefined linker flag is supported passed with the following output:
+Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a37f3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a37f3.dir/build.make CMakeFiles/cmTC_a37f3.dir/build
+gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a37f3.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,--no-undefined    -Wl,--no-undefined -o CMakeFiles/cmTC_a37f3.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_a37f3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a37f3.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--no-undefined  CMakeFiles/cmTC_a37f3.dir/CheckLinkerFlag.c.o -o cmTC_a37f3 
+gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the -Wl,-undefined,error linker flag is supported passed with the following output:
+Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c620e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c620e.dir/build.make CMakeFiles/cmTC_c620e.dir/build
+gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c620e.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-undefined,error    -Wl,-undefined,error -o CMakeFiles/cmTC_c620e.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_c620e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c620e.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-undefined,error  CMakeFiles/cmTC_c620e.dir/CheckLinkerFlag.c.o -o cmTC_c620e 
+gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the -pie linker flag is supported passed with the following output:
+Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e25b0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e25b0.dir/build.make CMakeFiles/cmTC_e25b0.dir/build
+gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e25b0.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -pie    -pie -o CMakeFiles/cmTC_e25b0.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_e25b0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e25b0.dir/link.txt --verbose=1
+/usr/bin/cc -pie  CMakeFiles/cmTC_e25b0.dir/CheckLinkerFlag.c.o -o cmTC_e25b0 
+gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the -Wl,-z,relro linker flag is supported passed with the following output:
+Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_58c90/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_58c90.dir/build.make CMakeFiles/cmTC_58c90.dir/build
+gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58c90.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,relro    -Wl,-z,relro -o CMakeFiles/cmTC_58c90.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_58c90
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58c90.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,relro  CMakeFiles/cmTC_58c90.dir/CheckLinkerFlag.c.o -o cmTC_58c90 
+gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the -Wl,-z,now linker flag is supported passed with the following output:
+Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_756bf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_756bf.dir/build.make CMakeFiles/cmTC_756bf.dir/build
+gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_756bf.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,now    -Wl,-z,now -o CMakeFiles/cmTC_756bf.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_756bf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_756bf.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,now  CMakeFiles/cmTC_756bf.dir/CheckLinkerFlag.c.o -o cmTC_756bf 
+gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the -Wl,-z,noexecstack linker flag is supported passed with the following output:
+Change Dir: /home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f4ab9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f4ab9.dir/build.make CMakeFiles/cmTC_f4ab9.dir/build
+gmake[1]: Entering directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f4ab9.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,noexecstack    -Wl,-z,noexecstack -o CMakeFiles/cmTC_f4ab9.dir/CheckLinkerFlag.c.o -c /home/shawr/develop/crypto/tilt/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_f4ab9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4ab9.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,noexecstack  CMakeFiles/cmTC_f4ab9.dir/CheckLinkerFlag.c.o -o cmTC_f4ab9 
+gmake[1]: Leaving directory '/home/shawr/develop/crypto/tilt/build/CMakeFiles/CMakeTmp'
+
+
+

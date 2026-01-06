@@ -172,7 +172,7 @@
 #define CRYPTONOTE_MAX_FRAGMENTS                                        20
 
 // TILT: Commented out - this was a Tilt address. Set your own after generating a Tilt wallet.
-// #define DONATION_ADDR "YOUR_TILT_ADDRESS_HERE"
+#define DONATION_ADDR ""
 
 struct hard_fork
 {

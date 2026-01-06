@@ -73,6 +73,8 @@ public: \
   template<bool is_store, class t_storage> \
   bool serialize_map(t_storage& stg, typename t_storage::hsection hparent_section) \
   { \
+_Pragma("GCC diagnostic push") \
+_Pragma("GCC diagnostic ignored \"-Wunused-variable\"") \
     decltype(*this) &this_ref = *this;
 
 #define KV_SERIALIZE_N(varialble, val_name) \
@@ -113,7 +115,9 @@ public: \
 #define KV_SERIALIZE_CONTAINER_POD_AS_BLOB_N(varialble, val_name) \
   epee::serialization::selector<is_store>::serialize_stl_container_pod_val_as_blob(this_ref.varialble, stg, hparent_section, val_name);
 
-#define END_KV_SERIALIZE_MAP() return true;}
+#define END_KV_SERIALIZE_MAP() \
+_Pragma("GCC diagnostic pop") \
+return true;}
 
 #define KV_SERIALIZE(varialble)                           KV_SERIALIZE_N(varialble, #varialble)
 #define KV_SERIALIZE_VAL_POD_AS_BLOB(varialble)           KV_SERIALIZE_VAL_POD_AS_BLOB_N(varialble, #varialble)

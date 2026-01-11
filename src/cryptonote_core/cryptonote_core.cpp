@@ -1665,17 +1665,15 @@ namespace cryptonote
       else
         main_message = "The daemon will start synchronizing with the network when connections are available.";
 
-      MGUSER_GREEN(ENDL << ENDL
-        << R"(   |  |  |  |  |  |                                  )" << ENDL
-        << R"(  ==================                                 )" << ENDL
-        << R"(--|     /\      ___|--   _ __   ___ _ ____   ____ _  )" << ENDL
-        << R"(--|    /  \    / __     | '_ \ / _ \ '__\ \ / / _` | )" << ENDL
-        << R"(--|   / /\ \  / /  |--  | | | |  __/ |   \ V / (_| | )" << ENDL
-        << R"(--|__/ /  \ \/ /   |--  |_| |_|\___|_|    \_/ \__,_| )" << ENDL
-        << R"(   ___/    \  /    |-- ==============================)" << ENDL
-        << R"(--|         \/     |--  v)" << MONERO_VERSION << ": " << MONERO_RELEASE_NAME << ENDL
-        << R"(  ==================                                 )" << ENDL
-        << R"(   |  |  |  |  |  |                                  )" << ENDL);
+      MGUSER_CYAN(ENDL << ENDL
+      << R"(      _____ ___ _   _____                              )" << ENDL
+      << R"(     |_   _|_ _| | |_   _|                             )" << ENDL
+      << R"(       | |  | || |   | |                               )" << ENDL
+      << R"(       | |  | || |___| |                               )" << ENDL
+      << R"(       |_| |___|_____|_|                               )" << ENDL
+      << R"(                                                       )" << ENDL
+      << R"(       v)" << MONERO_VERSION << ": " << MONERO_RELEASE_NAME << ENDL
+      << R"(                                                       )" << ENDL);
 
       MGUSER_YELLOW(ENDL
         << main_message << ENDL

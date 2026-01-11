@@ -187,9 +187,9 @@ namespace config
 
     // TILT: Custom address prefixes
     // TL for main addresses, Ti for integrated, Tt for subaddresses
-    uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0x5e87;            // TL
-    uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x41ba; // Ti
-    uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 0x4e8a;         // Tt
+    uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0x66c;            // TL
+    uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x682; // Ti
+    uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 0x685;         // Tt
     uint16_t const P2P_DEFAULT_PORT = 18420;
     uint16_t const RPC_DEFAULT_PORT = 18421;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 18422;
@@ -207,8 +207,8 @@ namespace config
 
     // TILT: Fresh chain starts at latest hard fork version immediately
     static const hard_fork hard_forks[] = {
-        { 1,  1},
-        { 12, 2}  // Start at HF 12 (latest features) from block 2
+        // { 1,  1},
+        { 12, 1}  // Start at HF 12 (latest features) from block 1
     };
 
     namespace testnet
@@ -224,8 +224,8 @@ namespace config
 
         // TILT: Fresh testnet
         static const hard_fork hard_forks[] = {
-            { 1,  1},
-            { 12, 2}
+            { 1,  0},
+            { 12, 0}
         };
     }
 

@@ -477,7 +477,7 @@ USE_LTO:BOOL=false
 USE_READLINE:BOOL=ON
 
 //The tag portion of the Monero software version
-VERSIONTAG:STRING=baacbca6c
+VERSIONTAG:STRING=c9cd65541
 
 //Path to a library.
 Z:FILEPATH=/usr/lib64/libz.so
@@ -487,6 +487,12 @@ ZMQ_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a library.
 ZMQ_LIB:FILEPATH=/usr/lib64/libzmq.so
+
+//Test _Werror__Werror=switch_cxx
+_Werror__Werror:UNINITIALIZED=switch_cxx:INTERNAL=1
+
+//Test _Werror__fcf_protection=full_cxx
+_Werror__fcf_protection:UNINITIALIZED=full_cxx:INTERNAL=1
 
 //Dependencies for the target
 blockchain_db_LIB_DEPENDS:STATIC=general;common;general;cncrypto;general;ringct;general;lmdb;general;/usr/lib64/libboost_filesystem.so;general;/usr/lib64/libboost_thread.so;general;/usr/lib64/librt.a;general;/usr/lib64/libz.so;general;dl;
@@ -828,6 +834,8 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Backtrace
 FIND_PACKAGE_MESSAGE_DETAILS_Backtrace:INTERNAL=[/usr/include][v()]
+//Details about finding Git
+FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.47.3()]
 //Details about finding HIDAPI
 FIND_PACKAGE_MESSAGE_DETAILS_HIDAPI:INTERNAL=[/usr/lib64/libhidapi-libusb.so][/usr/include/hidapi][v()]
 //Details about finding MiniUPnPc

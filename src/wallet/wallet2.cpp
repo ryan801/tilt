@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2024, The Tilt Project
+// Copyright (c) 2018-2024, The Nerva Project
 // Copyright (c) 2014-2024, The Monero Project
 // 
 // All rights reserved.
@@ -140,7 +140,7 @@ using namespace cryptonote;
 static const std::string MULTISIG_SIGNATURE_MAGIC = "SigMultisigPkV1";
 static const std::string MULTISIG_EXTRA_INFO_MAGIC = "MultisigxV1";
 
-static const std::string ASCII_OUTPUT_MAGIC = "TiltAsciiDataV1";
+static const std::string ASCII_OUTPUT_MAGIC = "NervaAsciiDataV1";
 
 namespace
 {

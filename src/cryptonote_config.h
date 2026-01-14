@@ -1,4 +1,4 @@
-// Copyright (c) 2025, The Tilt Project
+// Copyright (c) 2025, The Nerva Project
 // Copyright (c) 2014-2024, The Monero Project
 //
 // All rights reserved.
@@ -171,7 +171,7 @@
 
 #define CRYPTONOTE_MAX_FRAGMENTS                                        20
 
-// TILT: Commented out - this was a Tilt address. Set your own after generating a Tilt wallet.
+// TILT: Commented out - this was a Nerva address. Set your own after generating a Nerva wallet.
 #define DONATION_ADDR ""
 
 struct hard_fork

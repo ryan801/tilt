@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2024, The Tilt Project
+// Copyright (c) 2018-2024, The Nerva Project
 // Copyright (c) 2014-2024, The Monero Project
 // 
 // All rights reserved.
@@ -3170,7 +3170,7 @@ simple_wallet::simple_wallet()
   m_cmd_binder.set_handler("mms signer",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::mms, std::placeholders::_1),
                            tr(USAGE_MMS_SIGNER),
-                           tr("Set or modify authorized signer info (single-word label, transport address, Tilt address), or list all signers"));
+                           tr("Set or modify authorized signer info (single-word label, transport address, Nerva address), or list all signers"));
   m_cmd_binder.set_handler("mms list",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::mms, std::placeholders::_1),
                            tr(USAGE_MMS_LIST),
@@ -3291,7 +3291,7 @@ simple_wallet::simple_wallet()
   m_cmd_binder.set_handler("welcome",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::welcome, std::placeholders::_1),
                            tr(USAGE_WELCOME),
-                           tr("Prints basic info about Tilt for first time users"));
+                           tr("Prints basic info about Nerva for first time users"));
   m_cmd_binder.set_handler("version",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::version, std::placeholders::_1),
                            tr(USAGE_VERSION),
@@ -4223,7 +4223,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
     check_background_mining(password);
 
   if (welcome)
-    message_writer(console_color_yellow, true) << tr("If you are new to Tilt, type \"welcome\" for a brief overview.");
+    message_writer(console_color_yellow, true) << tr("If you are new to Nerva, type \"welcome\" for a brief overview.");
 
   if (m_long_payment_id_support)
   {
@@ -9792,7 +9792,7 @@ void simple_wallet::list_mms_messages(const std::vector<mms::message> &messages)
 void simple_wallet::list_signers(const std::vector<mms::authorized_signer> &signers)
 {
   message_writer() << boost::format("%2s %-20s %-s") % tr("#") % tr("Label") % tr("Transport Address");
-  message_writer() << boost::format("%2s %-20s %-s") % "" % tr("Auto-Config Token") % tr("Tilt Address");
+  message_writer() << boost::format("%2s %-20s %-s") % "" % tr("Auto-Config Token") % tr("Nerva Address");
   for (size_t i = 0; i < signers.size(); ++i)
   {
     const mms::authorized_signer &signer = signers[i];
@@ -10017,14 +10017,14 @@ void simple_wallet::mms_signer(const std::vector<std::string> &args)
     bool ok = cryptonote::get_account_address_from_str_or_url(info, m_wallet->nettype(), args[3], oa_prompter);
     if (!ok)
     {
-      fail_msg_writer() << tr("Invalid Tilt address");
+      fail_msg_writer() << tr("Invalid Nerva address");
       return;
     }
     monero_address = info.address;
     const std::vector<mms::message> &messages = ms.get_all_messages();
     if ((messages.size() > 0) || state.multisig)
     {
-      fail_msg_writer() << tr("Wallet state does not allow changing Tilt addresses anymore");
+      fail_msg_writer() << tr("Wallet state does not allow changing Nerva addresses anymore");
       return;
     }
   }

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2024, The Tilt Project
+// Copyright (c) 2018-2024, The Nerva Project
 // Copyright (c) 2014-2024, The Monero Project
 // 
 // All rights reserved.
@@ -29,23 +29,14 @@
 // 
 // Parts of this file are originally copyright (c) 2012-2013 The Cryptonote developers
 
-#pragma once 
+#include "blockchain.h"
 
 namespace boost
 {
   namespace serialization
   {
     template<class archive_t>
-    void serialize(archive_t & ar, cryptonote::blockchain_storage::transaction_chain_entry& te, const unsigned int version)
-    {
-      ar & te.tx;
-      ar & te.m_keeper_block_height;
-      ar & te.m_blob_size;
-      ar & te.m_global_output_indexes;
-    }
-
-    template<class archive_t>
-    void serialize(archive_t & ar, cryptonote::blockchain_storage::block_extended_info& ei, const unsigned int version)
+    void serialize(archive_t & ar, cryptonote::Blockchain::block_extended_info& ei, const unsigned int version)
     {
       ar & ei.bl;
       ar & ei.height;

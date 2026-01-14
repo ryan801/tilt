@@ -5837,16 +5837,13 @@ void simple_wallet::check_for_inactivity_lock(bool user)
     tools::clear_screen();
     m_in_command = true;
 
-    tools::msg_writer() << R"(   |  |  |  |  |  |                                  )";
-    tools::msg_writer() << R"(  ==================                                 )";
-    tools::msg_writer() << R"(--|     /\      ___|--   _ __   ___ _ ____   ____ _  )";
-    tools::msg_writer() << R"(--|    /  \    / __     | '_ \ / _ \ '__\ \ / / _` | )";
-    tools::msg_writer() << R"(--|   / /\ \  / /  |--  | | | |  __/ |   \ V / (_| | )";
-    tools::msg_writer() << R"(--|__/ /  \ \/ /   |--  |_| |_|\___|_|    \_/ \__,_| )";
-    tools::msg_writer() << R"(   ___/    \  /    |-- ==============================)";
-    tools::msg_writer() << R"(--|         \/     |--  )" << MONERO_VERSION << ": " << MONERO_RELEASE_NAME;
-    tools::msg_writer() << R"(  ==================                                 )";
-    tools::msg_writer() << R"(   |  |  |  |  |  |                                  )";
+    tools::msg_writer() << R"(      _____ ___ _   _____                              )";
+    tools::msg_writer() << R"(     |_   _|_ _| | |_   _|                             )";
+    tools::msg_writer() << R"(       | |  | || |   | |                               )";
+    tools::msg_writer() << R"(       | |  | || |___| |                               )";
+    tools::msg_writer() << R"(       |_| |___|_____|_|                               )";
+    tools::msg_writer() << R"(                                                       )";
+    tools::msg_writer() << R"(  )" << MONERO_VERSION << ": " << MONERO_RELEASE_NAME;
     tools::msg_writer() << "" << ENDL;
 
     if (!user)

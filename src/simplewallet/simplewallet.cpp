@@ -5837,13 +5837,15 @@ void simple_wallet::check_for_inactivity_lock(bool user)
     tools::clear_screen();
     m_in_command = true;
 
-    tools::msg_writer() << R"(      _____ ___ _   _____                              )";
-    tools::msg_writer() << R"(     |_   _|_ _| | |_   _|                             )";
-    tools::msg_writer() << R"(       | |  | || |   | |                               )";
-    tools::msg_writer() << R"(       | |  | || |___| |                               )";
-    tools::msg_writer() << R"(       |_| |___|_____|_|                               )";
-    tools::msg_writer() << R"(                                                       )";
-    tools::msg_writer() << R"(  )" << MONERO_VERSION << ": " << MONERO_RELEASE_NAME;
+    // Print ASCII logo
+  std::ifstream logo_file("bin/ascii-logo.txt");
+    if (logo_file) {
+      std::string line;
+      while (std::getline(logo_file, line)) {
+        tools::msg_writer() << line;
+      }
+      logo_file.close();
+    }
     tools::msg_writer() << "" << ENDL;
 
     if (!user)
@@ -9562,6 +9564,14 @@ void simple_wallet::commit_or_save(std::vector<tools::wallet2::pending_tx>& ptx_
 int main(int argc, char* argv[])
 {
   TRY_ENTRY();
+
+  // Print ASCII logo
+  std::ifstream logo_file("bin/ascii-logo.txt");
+  if (logo_file) {
+    std::cout << logo_file.rdbuf() << std::endl;
+  } else {
+    std::cout << "Logo file not found!" << std::endl;
+  }
 
 #ifdef WIN32
   // Activate UTF-8 support for Boost filesystem classes on Windows

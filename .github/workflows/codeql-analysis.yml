@@ -72,14 +72,22 @@ jobs:
           # Use security-and-quality for broader coverage
           queries: security-and-quality
 
-      - name: Build with CodeQL tracing
-        run: |
-          echo "Dummy build to activate CodeQL"
-          #rm -rf build
-          #cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
-          #cmake --build build -- -j"$(nproc)"
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:cpp"
+
+      # - name: Build with CodeQL tracing
+      #   run: |
+      #     echo "Dummy build to activate CodeQL"
+      #     #rm -rf build
+      #     #cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
+      #     #cmake --build build -- -j"$(nproc)"
+
+      # - name: Perform CodeQL Analysis
+      #   uses: github/codeql-action/analyze@v3
+      #   with:
+      #     category: "/language:cpp"

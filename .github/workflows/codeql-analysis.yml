@@ -25,6 +25,12 @@ jobs:
         with:
           submodules: recursive  # CryptoNote repos often have submodules
 
+      - name: Sync and update submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive --force
+          git submodule status --recursive
+
       - name: Install build dependencies
         run: |
           sudo apt-get update

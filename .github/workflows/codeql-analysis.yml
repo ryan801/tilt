@@ -1,0 +1,68 @@
+name: "CodeQL Security Analysis"
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+  schedule:
+    # Run weekly on Sunday at midnight - catches new CVEs in CodeQL's database
+    - cron: '0 0 * * 0'
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  analyze:
+    name: Analyze C++ Code
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # CryptoNote repos often have submodules
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            cmake \
+            pkg-config \
+            libboost-all-dev \
+            libssl-dev \
+            libzmq3-dev \
+            libunbound-dev \
+            libsodium-dev \
+            libreadline-dev \
+            libexpat1-dev \
+            libpgm-dev \
+            qttools5-dev-tools \
+            libhidapi-dev \
+            libusb-1.0-0-dev \
+            libprotobuf-dev \
+            protobuf-compiler \
+            libudev-dev
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: cpp
+          # Use security-and-quality for broader coverage
+          queries: security-and-quality
+
+      - name: Build with CodeQL tracing
+        run: |
+          mkdir -p build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Release ..
+          # CodeQL needs to watch the build - use single thread for reliability
+          make -j$(nproc)
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:cpp"

@@ -77,7 +77,7 @@ jobs:
         run: |
           rm -rf build
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
-          cmake --build build --target release-all -- -j2
+          cmake --build build -- -j2
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

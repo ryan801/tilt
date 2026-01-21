@@ -23,6 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           submodules: recursive  # CryptoNote repos often have submodules
 
       - name: Sync and update submodules
@@ -30,6 +31,17 @@ jobs:
           git submodule sync --recursive
           git submodule update --init --recursive --force
           git submodule status --recursive
+
+      - name: Debug submodule state
+        run: |
+          echo "Expected miniupnp SHA from superproject:"
+          git ls-tree HEAD external/miniupnp || true
+          echo
+          echo "Actual miniupnp HEAD checked out:"
+          git -C external/miniupnp rev-parse HEAD || true
+          echo
+          echo "Submodule status:"
+          git submodule status --recursive || true
 
       - name: Install build dependencies
         run: |
@@ -63,7 +75,7 @@ jobs:
       - name: Build with CodeQL tracing
         run: |
           rm -rf build
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
           cmake --build build -- -j"$(nproc)"
 
       - name: Perform CodeQL Analysis

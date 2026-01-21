@@ -69,22 +69,20 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: cpp
+          build-mode: manual
           # Use security-and-quality for broader coverage
           queries: security-and-quality
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
-        with:
-          category: "/language:cpp"
 
       - name: Build with CodeQL tracing
         run: |
           rm -rf build
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
-          cmake --build build --target-all -- -j2
+          cmake --build build --target release-all -- -j2
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:cpp"
 
       # - name: Perform CodeQL Analysis
       #   uses: github/codeql-action/analyze@v3

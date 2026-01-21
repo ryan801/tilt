@@ -80,12 +80,11 @@ jobs:
         with:
           category: "/language:cpp"
 
-      # - name: Build with CodeQL tracing
-      #   run: |
-      #     echo "Dummy build to activate CodeQL"
-      #     #rm -rf build
-      #     #cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
-      #     #cmake --build build -- -j"$(nproc)"
+      - name: Build with CodeQL tracing
+        run: |
+          rm -rf build
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DMANUAL_SUBMODULES=1
+          cmake --build build --target-all -- -j2
 
       # - name: Perform CodeQL Analysis
       #   uses: github/codeql-action/analyze@v3

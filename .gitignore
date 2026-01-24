@@ -95,3 +95,10 @@ __pycache__/
 *.log
 
 builder/output/
+
+
+# CodeQL artifacts
+*-codeql-db/
+*.sarif
+codeql-results.*
+*_setup.sh

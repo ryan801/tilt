@@ -1,14 +1,23 @@
 name: "CodeQL Security Analysis"
 
 on:
-  push:
-    branches: [main, master, develop]
-  pull_request:
-    branches: [main, master, develop]
-  schedule:
-    # Run weekly on Sunday at midnight - catches new CVEs in CodeQL's database
-    - cron: '0 0 * * 0'
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 0 * * 0'
+  # push:
+  #   branches: [main, master, develop]
+  # pull_request:
+  #   branches: [main, master, develop]
+
+# on:
+  # push:
+  #   branches: [main, master, develop]
+  # pull_request:
+  #   branches: [main, master, develop]
+  # schedule:
+  #   # Run weekly on Sunday at midnight - catches new CVEs in CodeQL's database
+  #   - cron: '0 0 * * 0'
+  # workflow_dispatch:  # Manual trigger
 
 jobs:
   analyze:

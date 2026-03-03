@@ -40,6 +40,8 @@
 #include <sstream>
 #include <fstream>
 #include <ctype.h>
+#include <cmath>
+#include <iomanip>
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
@@ -159,6 +161,8 @@ namespace
   const command_line::arg_descriptor< std::vector<std::string> > arg_command = {"command", ""};
   const command_line::arg_descriptor<bool> arg_non_interactive = {"non-interactive", sw::tr("run the command in non interactive mode"), false};
 
+  const char* USAGE_MINING_DISTRIBUTION("mining_distribution [exponential|weibull|erlang|lognormal|hyperexponential]");
+  const char* USAGE_MINING_STATS("mining_stats");
   const char* USAGE_START_MINING("start_mining [<number_of_threads>] [bg_mining] [ignore_battery]");
   const char* USAGE_SET_DONATE_LEVEL("donate_level [<number_of_blocks>]");
   const char* USAGE_SET_DAEMON("set_daemon <host>[:<port>] [trusted|untrusted]");
@@ -2809,6 +2813,7 @@ simple_wallet::simple_wallet()
   , m_last_activity_time(time(NULL))
   , m_locked(false)
   , m_in_command(false)
+  , m_mining_distribution(MiningDistribution::EXPONENTIAL)
 {
   m_cmd_binder.set_handler("start_mining",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::start_mining, std::placeholders::_1),
@@ -2821,6 +2826,14 @@ simple_wallet::simple_wallet()
   m_cmd_binder.set_handler("stop_mining",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::stop_mining, std::placeholders::_1),
                            tr("Stop mining in the daemon."));
+  m_cmd_binder.set_handler("mining_distribution",
+                           std::bind(&simple_wallet::on_command, this, &simple_wallet::mining_distribution, std::placeholders::_1),
+                           tr(USAGE_MINING_DISTRIBUTION),
+                           tr("Set or show the block-time distribution model used for mining statistics display.\nAvailable models: exponential (default), weibull, erlang, lognormal, hyperexponential.\nThis is a cosmetic choice only - all models target the same block time."));
+  m_cmd_binder.set_handler("mining_stats",
+                           std::bind(&simple_wallet::on_command, this, &simple_wallet::mining_stats, std::placeholders::_1),
+                           tr(USAGE_MINING_STATS),
+                           tr("Show mining statistics framed through the currently selected distribution model."));
   m_cmd_binder.set_handler("set_daemon",
                            std::bind(&simple_wallet::on_command, this, &simple_wallet::set_daemon, std::placeholders::_1),
                            tr(USAGE_SET_DAEMON),
@@ -5026,6 +5039,190 @@ bool simple_wallet::stop_mining(const std::vector<std::string>& args)
     success_msg_writer() << tr("Mining stopped in daemon");
   else
     fail_msg_writer() << tr("mining has NOT been stopped: ") << err;
+  return true;
+}
+//----------------------------------------------------------------------------------------------------
+bool simple_wallet::mining_distribution(const std::vector<std::string> &args)
+{
+  struct DistEntry {
+    const char *name;
+    MiningDistribution value;
+    const char *description;
+  };
+  static const DistEntry distributions[] = {
+    {"exponential",      MiningDistribution::EXPONENTIAL,      "Memoryless Poisson process (standard mining model)"},
+    {"weibull",          MiningDistribution::WEIBULL,          "Weibull k=2 (rising hazard rate, more consistent feel)"},
+    {"erlang",           MiningDistribution::ERLANG,           "Erlang-2 (two-phase, reduced variance)"},
+    {"lognormal",        MiningDistribution::LOGNORMAL,        "Log-normal sigma=0.6 (right-skewed, occasional long waits)"},
+    {"hyperexponential", MiningDistribution::HYPEREXPONENTIAL, "Hyperexponential (bursty, high-variance mixture)"},
+  };
+
+  if (args.empty())
+  {
+    const char *current = "unknown";
+    for (const auto &d : distributions)
+      if (d.value == m_mining_distribution)
+        current = d.name;
+    message_writer() << tr("mu (mean block time) is derived live from current difficulty and your measured hashrate.");
+    message_writer() << tr("All modes use the same mu; they differ only in variance (streakiness).");
+    message_writer() << "";
+    message_writer() << tr("Current mining distribution model: ") << current;
+    message_writer() << tr("Available distributions:");
+    for (const auto &d : distributions)
+      message_writer() << "  " << d.name << "  -  " << d.description;
+    message_writer() << tr("Use 'mining_stats' to view statistics under the active model.");
+    return true;
+  }
+
+  const std::string &arg = args[0];
+  for (const auto &d : distributions)
+  {
+    if (arg == d.name)
+    {
+      m_mining_distribution = d.value;
+      success_msg_writer() << tr("Mining distribution model set to: ") << d.name;
+      return true;
+    }
+  }
+
+  fail_msg_writer() << tr("Unknown distribution: ") << arg;
+  PRINT_USAGE(USAGE_MINING_DISTRIBUTION);
+  return true;
+}
+//----------------------------------------------------------------------------------------------------
+bool simple_wallet::mining_stats(const std::vector<std::string> &args)
+{
+  if (!try_connect_to_daemon())
+    return true;
+
+  COMMAND_RPC_MINING_STATUS::request req;
+  COMMAND_RPC_MINING_STATUS::response res;
+  bool r = m_wallet->invoke_http_json("/mining_status", req, res);
+  std::string err = interpret_rpc_response(r, res.status);
+  if (!r || !err.empty())
+  {
+    fail_msg_writer() << tr("Failed to query mining status: ") << err;
+    return true;
+  }
+
+  // Per-distribution display parameters.
+  // All factors are relative to the mean block time (difficulty / hashrate).
+  // p25/median/p75 are quantile multipliers; cov is coefficient of variation.
+  struct DistParams {
+    const char *name;
+    const char *description;
+    double p25_factor;
+    double median_factor;
+    double p75_factor;
+    double cov;
+  };
+  static const DistParams dist_params[] = {
+    {"Exponential",           "Poisson process (standard model)",           0.288, 0.693, 1.386, 1.000},
+    {"Weibull (k=2)",         "Rising hazard rate, more consistent timing", 0.604, 0.939, 1.327, 0.523},
+    {"Erlang-2",              "Two-phase process, reduced variance",        0.481, 0.839, 1.279, 0.707},
+    {"Log-normal (sigma=0.6)","Right-skewed, occasional long waits",        0.557, 0.835, 1.252, 0.658},
+    {"Hyperexponential",      "Bursty mixture, high variance",              0.220, 0.570, 1.300, 1.225},
+  };
+
+  // Unnormalized PDF at sample points x = t/mean for visual shape display.
+  // Computed as: exp(-x) | weibull | erlang-2 | lognormal | hyperexp
+  auto dist_pdf = [](int dist, double x) -> double {
+    switch (dist)
+    {
+      case 0: // Exponential: pdf = e^(-x)
+        return std::exp(-x);
+      case 1: { // Weibull k=2: theta = 2/sqrt(pi) * mean
+        static const double theta_fac = 1.12837916709551; // 2/sqrt(pi)
+        double u = x / theta_fac;
+        return 2.0 * u * std::exp(-u * u);
+      }
+      case 2: // Erlang-2: pdf ∝ x * e^(-2x)
+        return x * std::exp(-2.0 * x);
+      case 3: // Log-normal sigma=0.6: (ln(x)+0.18)^2 / 0.72
+        if (x <= 0.0) return 0.0;
+        {
+          double z = (std::log(x) + 0.18) / 0.6;
+          return std::exp(-0.5 * z * z) / x;
+        }
+      case 4: // Hyperexponential p1=0.5 lam1=2, p2=0.5 lam2=2/3
+        return std::exp(-2.0 * x) + (1.0 / 3.0) * std::exp(-2.0 * x / 3.0);
+      default:
+        return 0.0;
+    }
+  };
+
+  auto format_time = [](double s) -> std::string {
+    if (s <= 0.0) return "N/A";
+    std::ostringstream oss;
+    if (s >= 3600.0)
+      oss << std::fixed << std::setprecision(1) << (s / 3600.0) << "h";
+    else if (s >= 60.0)
+      oss << std::fixed << std::setprecision(1) << (s / 60.0) << "m";
+    else
+      oss << std::fixed << std::setprecision(1) << s << "s";
+    return oss.str();
+  };
+
+  int idx = static_cast<int>(m_mining_distribution);
+  const DistParams &dp = dist_params[idx];
+
+  message_writer(console_color_green, true) << "\n=== Mining Statistics [" << dp.name << "] ===";
+  message_writer() << "  Model: " << dp.description;
+  message_writer() << "";
+
+  if (!res.active)
+  {
+    message_writer() << "  Status: NOT MINING";
+    message_writer() << "  Start mining with: start_mining [threads]";
+  }
+  else
+  {
+    message_writer() << "  Status:      ACTIVE (" << res.threads_count << " thread(s))";
+    message_writer() << "  Hash rate:   " << res.speed << " H/s";
+    message_writer() << "  Difficulty:  " << res.difficulty;
+    message_writer() << "  Block reward:" << print_money(res.block_reward) << " TILT";
+
+    if (res.speed > 0 && res.difficulty > 0)
+    {
+      double mean_s = static_cast<double>(res.difficulty) / static_cast<double>(res.speed);
+      message_writer() << "";
+      message_writer() << "  Block-time estimates (at current hashrate):";
+      message_writer() << "    Mean (expected):   " << format_time(mean_s);
+      message_writer() << "    Median (50th pct): " << format_time(mean_s * dp.median_factor);
+      message_writer() << "    25th percentile:   " << format_time(mean_s * dp.p25_factor);
+      message_writer() << "    75th percentile:   " << format_time(mean_s * dp.p75_factor);
+      message_writer() << "    Coeff. of Var.:    "
+                       << std::fixed << std::setprecision(3) << dp.cov
+                       << "  (lower = more consistent)";
+
+      // ASCII PDF shape chart
+      message_writer() << "";
+      message_writer() << "  Block-time probability shape (x = expected block time):";
+      static const double sample_x[] = {0.25, 0.50, 1.00, 1.50, 2.00, 3.00};
+      static const char *x_labels[]  = {"0.25x", "0.50x", "1.00x", "1.50x", "2.00x", "3.00x"};
+      const int npts = 6;
+      double vals[npts];
+      double max_val = 0.0;
+      for (int i = 0; i < npts; ++i)
+      {
+        vals[i] = dist_pdf(idx, sample_x[i]);
+        if (vals[i] > max_val) max_val = vals[i];
+      }
+      const int bar_width = 32;
+      for (int i = 0; i < npts; ++i)
+      {
+        int bars = (max_val > 0.0) ? static_cast<int>(vals[i] / max_val * bar_width + 0.5) : 0;
+        std::string bar(bars, '#');
+        std::ostringstream row;
+        row << "    " << std::setw(5) << x_labels[i] << " | " << std::left << std::setw(bar_width) << bar;
+        message_writer() << row.str();
+      }
+    }
+  }
+
+  message_writer() << "";
+  message_writer() << "  Note: distribution model is cosmetic - all models target the same block time.";
+  message_writer() << "  Change model: mining_distribution <name>";
   return true;
 }
 //----------------------------------------------------------------------------------------------------

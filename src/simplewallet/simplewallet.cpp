@@ -5063,6 +5063,9 @@ bool simple_wallet::mining_distribution(const std::vector<std::string> &args)
     for (const auto &d : distributions)
       if (d.value == m_mining_distribution)
         current = d.name;
+    message_writer() << tr("mu (mean block time) is derived live from current difficulty and your measured hashrate.");
+    message_writer() << tr("All modes use the same mu; they differ only in variance (streakiness).");
+    message_writer() << "";
     message_writer() << tr("Current mining distribution model: ") << current;
     message_writer() << tr("Available distributions:");
     for (const auto &d : distributions)

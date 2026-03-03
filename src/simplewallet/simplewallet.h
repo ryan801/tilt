@@ -86,6 +86,8 @@ namespace cryptonote
 
     enum ResetType { ResetNone, ResetSoft, ResetHard, ResetSoftKeepKI };
 
+    enum class MiningDistribution { EXPONENTIAL, WEIBULL, ERLANG, LOGNORMAL, HYPEREXPONENTIAL };
+
     bool handle_command_line(const boost::program_options::variables_map& vm);
 
     bool run_console_handler();
@@ -252,6 +254,8 @@ namespace cryptonote
     bool welcome(const std::vector<std::string>& args);
     bool version(const std::vector<std::string>& args);
     bool on_unknown_command(const std::vector<std::string>& args);
+    bool mining_distribution(const std::vector<std::string> &args = std::vector<std::string>());
+    bool mining_stats(const std::vector<std::string> &args = std::vector<std::string>());
 
     bool cold_sign_tx(const std::vector<tools::wallet2::pending_tx>& ptx_vector, tools::wallet2::signed_tx_set &exported_txs, std::vector<cryptonote::address_parse_info> &dsts_info, std::function<bool(const tools::wallet2::signed_tx_set &)> accept_func);
     uint64_t get_daemon_blockchain_height(std::string& err);
@@ -436,6 +440,7 @@ namespace cryptonote
     std::atomic<time_t> m_last_activity_time;
     std::atomic<bool> m_locked;
     std::atomic<bool> m_in_command;
+    MiningDistribution m_mining_distribution;
 
     template<uint64_t mini, uint64_t maxi> struct get_random_interval { public: uint64_t operator()() const { return crypto::rand_range(mini, maxi); } };
 

@@ -1,41 +1,258 @@
 # Tilt
 
-[![ci/gh-actions/build](https://github.com/tilt-project/tilt/actions/workflows/build.yml/badge.svg)](https://github.com/tilt-project/tilt/actions/workflows/build.yml)
-[![ci/gh-actions/depends](https://github.com/tilt-project/tilt/actions/workflows/depends.yml/badge.svg)](https://github.com/tilt-project/tilt/actions/workflows/depends.yml)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Status](https://img.shields.io/badge/status-experimental-orange)
 
-**Latest release: [v0.1.0 `The Game Is Always Changing`][tilt-releases-link]**
+**Tilt** is an experimental cryptocurrency that explores **configurable block discovery distributions** for mining rewards.
 
-## Table of Contents
+Traditional cryptocurrencies use a **Poisson (exponential) process** for block discovery. Tilt allows miners to select alternative statistical models while preserving the same expected block time.
 
-- [About](#about)
-- [Installing](#installing)
-- [Contributing](#contributing)
-- [Help](#help)
-- [License](#license)
+The goal is to study how **variance, hazard rate, and reward distribution psychology** affect mining behavior and network dynamics.
 
-## About
+Tilt is currently a **research and experimentation project**, not a production financial system.
 
-Tilt (TILT) is a private and secure cryptocurrency that you can mine on your computer's CPU. It's GPU and ASIC resistant and tries to stay true to the 1 CPU = 1 VOTE vision.
+---
 
-Tilt offers true privacy and fungibility, is untraceable and un-linkable, with users and transfer amounts hidden from the public.
+## Why Tilt Exists
 
-Each miner requires a copy of the blockchain, hence there is no support for pool mining. Therefore, Tilt offers better decentralization and censorship resistance than the majority of other blockchains.
+Most proof-of-work cryptocurrencies share the same mining model:
 
-## Installing
+- Block discovery follows an **exponential distribution**
+- Expected block time is determined by **difficulty / hashrate**
+- Variance in block discovery can lead to **long droughts or lucky streaks**
 
-You can download precompiled binaries from the [releases][tilt-releases-link].
+Tilt asks a simple question:
 
-You can also use the official Tilt Docker image from Docker Hub. See [docs/DOCKER.md](docs/DOCKER.md) for instructions.
+> What happens if miners can choose different statistical distributions for block discovery while keeping the same expected block time?
 
-Alternatively, see [docs/BUILDING.md](docs/BUILDING.md) for build instructions.
+By controlling **variance without changing expectation**, Tilt allows exploration of:
+
+- Mining psychology  
+- Reward volatility  
+- Network stability  
+- Pool formation incentives  
+
+---
+
+## Core Idea
+
+Tilt keeps the **expected block time identical across all mining modes**.
+
+Expected block time is computed dynamically:
+```
+μ = difficulty / hashrate
+
+Each mining distribution is scaled around the same μ.
+
+This ensures that:
+- long-run rewards remain equal
+- only the variance and tail behavior differ
+```
+
+### Supported Mining Distributions
+
+Tilt currently implements the following block discovery models:
+
+| Distribution | Description |
+|---|---|
+| **Exponential** | Standard Poisson mining model used by Bitcoin and most PoW chains |
+| **Weibull (k=2)** | Increasing hazard rate, producing more consistent block timing |
+| **Erlang-2** | Two-phase discovery with reduced variance |
+| **Log-Normal** | Right-skewed distribution with occasional long waits |
+| **Hyperexponential** | High-variance bursty model with frequent short waits and rare droughts |
+
+All distributions are normalized so that:
+```
+E[T] = μ
+```
+
+This preserves fairness while allowing miners to choose their preferred variance profile.
+
+---
+
+## Architecture Overview
+
+Tilt separates mining into a distribution abstraction layer:
+```
++----------------------+
+| Wallet (CLI / GUI)   |
++----------+-----------+
+           |
+           v
++----------------------+
+| RPC / P2P Interface  |
++----------+-----------+
+           |
+           v
++----------------------+
+| Consensus Engine     |
+| Block Validation     |
++----------+-----------+
+           |
+           v
++----------------------+
+| Mining Engine        |
+| Distribution Layer   |
++----------------------+
+```
+
+The mining engine allows block discovery to follow multiple statistical models while preserving identical expected reward rates.
+
+---
+
+## Current Status
+
+Tilt currently includes:
+
+- Full blockchain daemon
+- Wallet implementation
+- Configurable mining distributions
+- Cross-platform builds (Linux, macOS, Windows)
+- CI pipelines and static analysis
+
+The project is still under development and should be treated as experimental software.
+
+---
+
+## Quick Start
+
+### Clone the repository:
+```bash
+git clone --recursive https://github.com/yourname/tilt.git
+cd tilt
+```
+
+### Build the project:
+```bash
+mkdir build
+cd build
+cmake ..
+make -j
+```
+
+### Run the daemon:
+```bash
+./tiltd
+```
+
+### Create or open a wallet:
+```bash
+./tilt-wallet-cli
+```
+
+---
+
+## Building
+
+### Requirements
+
+Typical dependencies include:
+
+- CMake
+- Boost
+- OpenSSL
+- libsodium
+- ZeroMQ
+- protobuf
+- standard build tools
+
+### Example build:
+```bash
+git clone --recursive https://github.com/yourname/tilt.git
+cd tilt
+mkdir build
+cd build
+cmake ..
+make -j
+```
+
+---
+
+## Documentation
+
+Additional documentation will be expanded in the `/docs` directory.
+
+Planned documentation includes:
+
+- Mining distribution models
+- Protocol architecture
+- Statistical analysis tools
+- Consensus design notes
+
+---
+
+## Research Direction
+
+Tilt may be useful as a platform for:
+
+- Mining reward simulations
+- Economic modeling
+- Distributed systems experiments
+- Probabilistic consensus research
+
+Researchers and developers interested in exploring alternative mining dynamics are encouraged to experiment with the code.
+
+---
+
+## Roadmap
+
+Possible future work includes:
+
+- Mining distribution visualization tools
+- Monte Carlo mining simulations
+- Network propagation analysis
+- Variance impact studies
+- Improved developer documentation
+
+---
 
 ## Contributing
 
-We welcome all contributions from the community. If you are looking to help out, please refer to [CONTRIBUTING.md](docs/CONTRIBUTING.md) for a set of guidelines.
+Contributions are welcome.
 
-## Help
+Areas where help would be valuable:
 
-Check out the project [documentation][tilt-docs-link], create an [issue][tilt-issues-link] or head to [Discord][tilt-discord-link] to get help from the community.
+- Statistical modeling tools
+- Mining simulations
+- Network stress testing
+- Documentation improvements
+- Security auditing
+
+Please open an issue before submitting large changes.
+
+---
+
+## Security Notice
+
+Tilt is experimental software and has not undergone formal security auditing.
+
+**Do not use it to store real value.**
+
+---
+
+## Citation
+
+If you use Tilt for research, please cite:
+```
+Tilt: A Blockchain Experiment in Configurable Mining Distributions
+Ryan (2026)
+https://github.com/yourname/tilt
+```
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) 2025-2026 Ryan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## License
 

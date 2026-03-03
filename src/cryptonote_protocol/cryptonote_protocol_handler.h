@@ -2,6 +2,10 @@
 /// @author rfree (current maintainer/user in monero.cc project - most of code is from CryptoNote)
 /// @brief This is the original cryptonote protocol network-events handler, modified by us
 
+// MIT License
+// Tilt Project
+// Copyright (c) 2026 Ryan
+//
 // Copyright (c) 2018-2024, The Nerva Project
 // Copyright (c) 2014-2024, The Monero Project
 // 

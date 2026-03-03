@@ -41,7 +41,11 @@ Check out the project [documentation][tilt-docs-link], create an [issue][tilt-is
 
 [LICENSE](LICENSE)
 
-Copyright (c) 2018-2024 The Nerve Project.  
+MIT License
+Tilt Project
+Copyright (c) 2026 Ryan
+
+Copyright (c) 2018-2024 The Nerve Project.
 Copyright (c) 2014-2024 The Monero Project.  
 Copyright (c) 2017-2018 The Masari Project.  
 Portions Copyright (c) 2012-2013 The Cryptonote developers. 

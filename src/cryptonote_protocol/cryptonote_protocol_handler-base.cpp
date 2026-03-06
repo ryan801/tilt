@@ -2,6 +2,10 @@
 /// @author rfree (current maintainer in monero.cc project)
 /// @brief This is the place to implement our handlers for protocol network actions, e.g. for ratelimit for download-requests
 
+// MIT License
+// Tilt Project
+// Copyright (c) 2026 Ryan
+//
 // Copyright (c) 2018-2024, The Nerva Project
 // Copyright (c) 2014-2024, The Monero Project
 // 

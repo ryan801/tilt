@@ -1,0 +1,3 @@
+git rm -r --cached build/
+git commit -m "remove build artifacts, add to gitignore"
+git push origin main

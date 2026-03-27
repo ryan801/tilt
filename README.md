@@ -12,9 +12,9 @@ It doesn't have to. Nobody ever asked why.
 
 ## The Observation
 
-Every major proof-of-work cryptocurrency — Bitcoin, Monero, Litecoin, and virtually every fork or derivative — uses the same statistical model for block discovery: the **exponential distribution**, which is the continuous expression of a Poisson process.
+Every major proof-of-work cryptocurrency (Bitcoin, Ethereu, Monero, Litecoin, and virtually every fork or derivative) uses the same statistical model for block discovery: the **exponential distribution**, which is the continuous expression of a Poisson process.
 
-This means block discovery is **memoryless**. The probability of finding the next block is independent of how long you've already been mining. No matter how long a drought lasts, your odds reset every second.
+This means block discovery is **memoryless**. The probability of finding the next block is independent of how long you have already been mining. No matter how long a drought lasts, your odds reset every second.
 
 This choice was made early, inherited by every subsequent project, and has never been seriously questioned. It is not obviously correct. It is a design decision that became an assumption.
 
@@ -24,11 +24,11 @@ Tilt asks what happens when you change it.
 
 ## The Hypothesis
 
-Different probability distributions produce different **variance profiles** around the same expected block time. A miner using an Erlang-2 distribution experiences more consistent rewards than one using the standard exponential model. A miner using a hyperexponential model experiences more volatile, bursty rewards.
+Different probability distributions produce different **variance profiles** around the same expected block time. A miner using an Erlang-2 distribution experiences more consistent rewards than one using the standard exponential model. A miner using a hyperexponential model experiences more volatile, burst-like rewards.
 
 If expected block time is held constant across all distributions, long-run rewards are mathematically identical. But the **experience** of mining is not.
 
-This matters because miners are people, and people respond to variance differently than expected value calculations suggest they should. Behavioral economics has documented this extensively: loss aversion, the gambler's fallacy, sensitivity to streaks and droughts. A mining model that produces more consistent rewards may attract different behavior than one that produces volatile streaks — even when the math says they are equivalent.
+This matters because miners are people, and people respond to variance differently than expected value calculations suggest they should. Behavioral economics has documented this extensively: loss aversion, the gambler's fallacy, sensitivity to streaks and droughts. A mining model that produces more consistent rewards may attract different behavior than one that produces volatile streaks even when the math says they are equivalent.
 
 Tilt is a platform for exploring whether this is true, and what the implications are for pool formation, miner retention, and network stability.
 
@@ -38,7 +38,7 @@ Tilt is a platform for exploring whether this is true, and what the implications
 
 Most likely, because every project copied the last one.
 
-CryptoNote inherited Poisson from Bitcoin. Monero inherited it from CryptoNote. Every fork inherited it from Monero. At no point in this lineage did anyone appear to ask "is this the right distribution, and why?" The assumption traveled intact through a decade of forks because the code worked and nobody was looking at it critically.
+CryptoNote inherited Poisson from Bitcoin. Monero inherited it from CryptoNote. Every fork inherited it from Monero, and the list goes on. At no point in this lineage did anyone appear to ask "is this the right distribution, and why?" The assumption traveled intact through a decade of forks because the code worked and nobody was looking at it critically.
 
 This is not unique to the distribution choice. It is representative of how much of the cryptocurrency space operates: a thin layer of branding over deeply inherited, unexamined fundamentals. Tilt is one specific place where that pattern is visible and testable.
 
@@ -53,7 +53,7 @@ Tilt preserves mathematical fairness across all mining modes by normalizing each
 E[T] = μ  (for all supported distributions)
 ```
 
-Only variance and tail behavior differ. Long-run expected rewards are identical regardless of which distribution a miner selects.
+Variance and tail behavior are the only variables that differ. Long-run expected rewards are identical regardless of which distribution a miner selects.
 
 ### Supported Mining Distributions
 
@@ -63,7 +63,7 @@ Only variance and tail behavior differ. Long-run expected rewards are identical 
 | **Weibull (k=2)** | More consistent timing, increasing hazard rate | Increasing |
 | **Erlang-2** | Two-phase discovery, reduced variance | Increasing then constant |
 | **Log-Normal** | Right-skewed, occasional long waits | Non-monotonic |
-| **Hyperexponential** | High variance, bursty rewards, rare droughts | Decreasing |
+| **Hyperexponential** | High variance, burst-like rewards, rare droughts | Decreasing |
 
 ---
 
